@@ -31,6 +31,7 @@ main {
 
 nav ul {
   display: flex;
+  position: fixed;
   margin-right: 0;
   padding: 0;
   text-align: center;
@@ -70,6 +71,18 @@ height: 60px;
 display: flex;
 flex-direction: column;
 margin-left: 40%;
+}
+
+/*lista sin desplegar*/
+#desplegable {
+  position: absolute;
+  display: none;
+  background-color: #E8F0F3;
+
+}
+/*me muestra la lista de generos desplegable cuando paso el cursor*/
+#contenedor:hover > #desplegable {
+  display: block;
 }
 
 footer div.copyright img.img-poweredby{

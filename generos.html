@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+    <html lang="en" dir="ltr">
+      <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>MC Movies</title>
 
-  </body>
-</html>
+          <!-- UIkit CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+
+          <!-- UIkit JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+
+          <link rel="stylesheet" href="css/style.css">
+
+      </head>
+      <body>
+          <div class="access-allowed">
+              <header>
+                  <nav>
+                      <ul class="ul-menu">
+                          <li class="li-logo">
+                            <img class="logo" src="img/abstractlogo.png" alt="">
+                          </li>
+                          <li class="li-menu">
+                            <a  id="home" class="color-black" href="home.html">HOME</a>
+                          </li>
+                          <li class="li-menu" id="contenedor">
+                      <a class="dropdown-content" href="generos.html" id="whatDoWeDo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        GENRES
+                      </a>
+                      <div class="dropdown-menu listado-generos" id="desplegable" aria-labelledby="navbarDropdown">
+
+
+
+                      </div>
+                    </li>
+    </div>
+                          </li>
+                          <li class="li-menu">
+                            <a id="products" class="color-black" href="watchlist.html">WHATCH LIST</a>
+                          </li>
+                          <li>
+                            <div class="uk-margin">
+                                <form class="uk-search uk-search-default">
+                                    <a href="js/buscador.js" class="uk-search-icon-flip" uk-search-icon></a>
+                                    <input class="uk-search-input" type="search" placeholder="Search...">
+                                </form>
+                            </div>
+                          </li>
+                          <li class="li-login"><a class="color-black" href="#products"></a>
+                            <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>LOGIN</a>
+                            <div id="modal-overflow" uk-modal>
+                                  <div class="uk-modal-dialog">
+                                      <button class="uk-modal-close-default" type="button" uk-close></button>
+                                      <div class="uk-modal-body" uk-overflow-auto>
+                                        <form class="uk-flex uk-flex-column uk-flex-middle">
+                                          <div class="uk-margin-large-top">
+                                            <div class="uk-inline">
+                                              <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                              <input class="uk-input" type="text">
+                                            </div>
+                                          </div>
+                                          <div class="uk-margin">
+                                            <div class="uk-inline">
+                                              <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                              <input class="uk-input" type="text">
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                      <div class="uk-modal-footer uk-text-right">
+                                          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                          <button class="uk-button uk-button-primary" type="button">Save</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                  </nav>
+              </header>
+
+<h1> PELICULAS SEGUN EL GENERO QUE SELECCIONO EL USUARIO</h1>
+
+          <footer>
+            <div class="container">
+              <div class="copyright">
+              <img class="img-logo" "src="img/movieslogo.png" alt="">
+
+               <h2 class=""> MC Movies </h2>
+
+               </div>
+            </div>
+
+          </footer>
