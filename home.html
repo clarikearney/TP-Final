@@ -32,7 +32,7 @@
                         <a href="js/generos.js">Genres</a>
                       </li>
                       <li class="li-menu"><a class="color-black" href="#products"></a>
-                        <a  href="js/watchlist.js">Whatch List</a>
+                        <a  href="js/watchlist.js">Favorites</a>
                       </li>
                       <li>
                         <div class="uk-margin">
@@ -42,58 +42,36 @@
                             </form>
                         </div>
                       </li>
+                      <!-- Obtener un modal de uikit para que aparezca un cartel cuando el usuario haga click en un botóna
+                      El botón de login tiene que ir adentro del li y tiene que ir en el nav, el div obtenido del
+                      uikit con el form, los iconos y demas tiene que ir afuera del li  -->
+                      <span id="nombre-de-usuario"></span>
                       <li class="li-login"><a class="color-black" href="#products"></a>
                         <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
                         <div id="modal-overflow" uk-modal>
                               <div class="uk-modal-dialog">
                                   <button class="uk-modal-close-default" type="button" uk-close></button>
                                   <div class="uk-modal-body" uk-overflow-auto>
-                                    <form class="uk-flex uk-flex-column uk-flex-middle">
+                                    <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
                                       <div class="uk-margin-large-top">
                                         <div class="uk-inline">
                                           <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                          <input class="uk-input" type="text">
+                                          <input id="nombre" class="uk-input" type="text">
                                         </div>
                                       </div>
                                       <div class="uk-margin">
                                         <div class="uk-inline">
                                           <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                          <input class="uk-input" type="text">
+                                          <input class="uk-input" id="contraseña" type="password">
                                         </div>
+                                      </div>
+                                      <div class="uk-modal-footer uk-text-right">
+                                        <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->
+                                          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                          <!-- Formularios: onsubmit: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
+                                          <button class="uk-button uk-button-primary" type="submit">Save</button>
                                       </div>
                                     </form>
-                                  </div>
-                                  <div class="uk-modal-footer uk-text-right">
-                                      <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                      <button class="uk-button uk-button-primary" type="button">Save</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="li-login"><a class="color-black" href="#products"></a>
-                        <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Register</a>
-                        <div id="modal-overflow" uk-modal>
-                              <div class="uk-modal-dialog">
-                                  <button class="uk-modal-close-default" type="button" uk-close></button>
-                                  <div class="uk-modal-body" uk-overflow-auto>
-                                    <form class="uk-flex uk-flex-column uk-flex-middle">
-                                      <div class="uk-margin-large-top">
-                                        <div class="uk-inline">
-                                          <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                          <input class="uk-input" type="text">
-                                        </div>
-                                      </div>
-                                      <div class="uk-margin">
-                                        <div class="uk-inline">
-                                          <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                          <input class="uk-input" type="text">
-                                        </div>
-                                      </div>
-                                    </form>
-                                  </div>
-                                  <div class="uk-modal-footer uk-text-right">
-                                      <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                      <button class="uk-button uk-button-primary" type="button">Save</button>
                                   </div>
                               </div>
                           </div>
@@ -149,6 +127,7 @@
 <script type="text/javascript" src="js/watchlist.js"></script>
 <script type="text/javascript" src="js/popular.js"></script>
 <script type="text/javascript" src="js/proximas.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/mejorpuntuadas.js"></script>
 <script type="text/javascript" src="js/ukit-icons.js"></script>
 <script type="text/javascript" src="js/ukit-icons.min.js"></script>

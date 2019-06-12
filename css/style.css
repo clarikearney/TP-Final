@@ -2,6 +2,10 @@
 
 *{box-sizing: border-box;}
 
+span{
+  color: #FFF;
+}
+
 body {
   margin: 0;
   border: 0;
@@ -40,7 +44,7 @@ nav ul li.li-menu {
 }
 nav ul li {
   margin: 0;
-  padding: 15px 12px 0 12px;
+  padding: 20px 12px 0 12px;
   flex-direction: row;
   list-style-type: none;
   font-size: 1.5rem;
@@ -54,8 +58,8 @@ nav ul li a:hover {
 }
 nav li.li-logo {
   margin-left: 0;
-  padding-top: 0.7%;
-  width: 10%;
+  width: 100px;
+  padding-top: 0.2%;
 }
 
 section div.uk-position-relative {
