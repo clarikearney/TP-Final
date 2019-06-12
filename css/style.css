@@ -22,6 +22,7 @@ header {
   position: fixed;
   top: 0;
   background-color: black;
+  z-index: 100;
 }
 header nav {
   width: 100%;
@@ -62,10 +63,28 @@ nav li.li-logo {
   padding-top: 0.2%;
 }
 
+#nombre-de-usuario {
+  padding: 2%;
+}
+section {
+  z-index: 99;
+}
+#puntaje {
+  padding-top: 1%;
+}
+#populares {
+  padding-top:0;
+}
+#proximamente {
+  padding-top: 0;
+}
 section div.uk-position-relative {
   width: 30%;
   margin-left: 40%;
   margin-bottom: 2.5%;
+}
+section h5 {
+  margin-left: 50%;
 }
 
 footer {
