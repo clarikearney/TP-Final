@@ -7,9 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/uikit-rtl.css">
+    <!-- <link rel="stylesheet" href="css/uikit-rtl.css">
     <link rel="stylesheet" href="css/uikit-rtl.min.css">
-    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/uikit.css"> -->
     <link rel="stylesheet" href="css/uikit.min.css">
     <link rel="stylesheet" href="css/login.css">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -123,15 +123,33 @@
 
         <main>
           <section id="buscador" class="section-buscador">
-            <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+            <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="ratio: 10:5; animation: push" >
+              <!-- Al usar la libreria de UIkit la forma de controlar el tamaño de la imagen es mediante proporciones,
+            por eso el código ratio: 10:5 fue el que sirvió para ajustar el tamaño -->
+                <ul class="uk-slideshow-items detalle" >
+
+                </ul>
+                <div class="uk-light">
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                </div>
+            </div>
+          </section>
+
+        <!--
+          <section id="buscador" class="section-buscador">
+            <div class="uk-position-relative uk-visible-toggle" id="lista-pelicula" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
               <ul class="uk-slideshow-items detalle">
+
+
               </ul>
               <div class="uk-light">
                   <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
                   <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
               </div>
           </div>
-          </section>
+          </section> -->
+
         </main>
 
         <footer>

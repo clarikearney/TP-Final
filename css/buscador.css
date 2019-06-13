@@ -1,20 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
-
-*{box-sizing: border-box;}
-
-section {
-  z-index: 99;
-}
 #buscador {
-  padding-top: 1%;
+  z-index: 99;
+  /* margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px; */
 }
-
-
-/* section div.uk-position-relative {
-  width: 10%;
-  margin-left: 40%;
-  margin-bottom: 2.5%;
-} */
-ul.uk-slideshow-items {
-  width: 2px;
+ul.detalle {
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
