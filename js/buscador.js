@@ -1,12 +1,12 @@
 
 
 window.addEventListener("load", function() {
+
   var imgPath = "https://image.tmdb.org/t/p/original"
   var queryString = new URLSearchParams(window.location.search)
-  var buscador = queryString.get("buscador")
+  var buscador = queryString.get("query")
 
-    document.querySelector("p").innerText += " "+buscador
-    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&page=1")
+    fetch("https://api.themoviedb.org/3/search/movie?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&query=" + buscador + "&page=1&include_adult=false")
       .then(function(respuesta) {
         return respuesta.json()
       })
