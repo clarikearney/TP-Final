@@ -12,7 +12,7 @@ window.addEventListener("load", function() {
       .then(function(informacion) {
         console.log(informacion.results);
 
-        var arrayDePeliculas = informacion.results
+        var arrayDePel iculas = informacion.results
         console.log(arrayDePeliculas);
 
         for (var i = 0; i < 9; i++) {
