@@ -55,7 +55,7 @@ nav ul li a:hover {
 }
 nav li.li-logo {
   margin-left: 0;
-  width: 100px;
+  width: 400px;
   padding-top: 0.2%;
 }
 
@@ -63,18 +63,17 @@ nav li.li-logo {
   padding: 2%;
 }
 footer {
-  width: 100%;
-  position: fixed;
+    width: 100%;
+    position: fixed;
     bottom: 0;
     left: 0;
     background: #3898F9;
     color: white;
-    margin-top: 70%;
-/*width: 100%;
-height: 60px;
-display: flex;
-flex-direction: column;
-margin-left: 40%;*/
+    padding-top: 0.5%;
+    height: 180px;
+}
+footer div.copyright {
+  margin-left: 50%;
 }
 footer div.copyright img.img-poweredby{
   width: 11%;
