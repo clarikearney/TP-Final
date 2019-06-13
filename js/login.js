@@ -1,3 +1,4 @@
+
 // primero chequear si se envia el formulario (agarro el formulario: querySelector): var Form = document.querySelector(#myForm)
 // lo guardo en una variable (var nombre y var contraseña)
 // cuando se envia el formulario (theForm.onsubmit):
@@ -10,25 +11,33 @@ var theForm = document.querySelector ("#myForm");
 theForm.onsubmit = function (event) {
   var boton = document.querySelector("#nombre")
   var boton2 = document.querySelector("#contraseña")
-  if (boton.value == ""|| boton2.value == ""){
+  var boton3 = document.querySelector("#mail");
+
+  if(boton.value == "" || boton2.value == "" || boton3.value == ""){
     event.preventDefault();
     // si un input esta vacio, if (input esta vacio) hace prevent default una vez que haga submit, antes del if
     // hacer variables de nombre y contra
-    alert("escribi");
+    alert("complete your info!");
+  }else if ((!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(boton3.value)))){
+    event.preventDefault();
+    alert("You have entered an invalid email adress!")
   }else {
-    var name = boton.value
-    var pass = boton2.value
+    var name = boton.value;
+    var pass = boton2.value;
+    var mail = boton3.value;
     localStorage.setItem("nombre",name);
     localStorage.setItem("nombre",pass);
+    localStorage.setItem("mail",mail);
     console.log(name);
-    console.log(pass);
+    console.log(localStorage);
     var modal = document.querySelector("#modal-overflow")
     modal.style.display = "none";
     var login = document.querySelector(".li-login")
     login.style.display = "none";
      var nombre = localStorage.getItem("nombre");
-    var span = document.querySelector("#nombre-de-usuario")
-    span.innerText = nombre;
+     var span = document.querySelector("#nombre-de-usuario")
+     span.innerText = nombre;
+  }
   }
 }
 

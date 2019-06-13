@@ -29,11 +29,6 @@ header nav {
   height: 80px;
   box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
 }
-
-main {
-  margin-top: 84px;
-}
-
 nav ul {
   display: flex;
   margin-right: 0;
@@ -66,27 +61,6 @@ nav li.li-logo {
 #nombre-de-usuario {
   padding: 2%;
 }
-section {
-  z-index: 99;
-}
-#puntaje {
-  padding-top: 1%;
-}
-#populares {
-  padding-top:0;
-}
-#proximamente {
-  padding-top: 0;
-}
-section div.uk-position-relative {
-  width: 30%;
-  margin-left: 40%;
-  margin-bottom: 2.5%;
-}
-section h5 {
-  margin-left: 50%;
-}
-
 footer {
 width: 100%;
 height: 60px;

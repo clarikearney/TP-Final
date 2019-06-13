@@ -11,12 +11,16 @@
       <!-- UIkit JS -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
-      <link rel="stylesheet" href="css/style.css">
+
+      <link rel="stylesheet" href="css/navbar.css">
+      <link rel="stylesheet" href="css/home.css">
       <link rel="stylesheet" href="css/uikit-rtl.css">
       <link rel="stylesheet" href="css/uikit-rtl.min.css">
       <link rel="stylesheet" href="css/uikit.css">
       <link rel="stylesheet" href="css/uikit.min.css">
       <link rel="stylesheet" href="css/login.css">
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+
   </head>
   <body>
       <div class="access-allowed">
@@ -37,7 +41,7 @@
                       </li>
                       <li>
                         <div class="uk-margin">
-                            <form action="detallepeli.html" method="get" class="uk-search uk-search-default">
+                            <form action="buscador.html" method="get" class="uk-search uk-search-default">
                                 <!--get envia busqueda en el html -->
                                 <a href="js/buscador.js" class="uk-search-icon-flip" uk-search-icon></a>
                                 <input class="uk-search-input" type="search" name="query" placeholder="Search...">
@@ -48,6 +52,42 @@
                       El botón de login tiene que ir adentro del li y tiene que ir en el nav, el div obtenido del
                       uikit con el form, los iconos y demas tiene que ir afuera del li  -->
                       <span id="nombre-de-usuario"></span>
+                      <li class="li-login"><a class="color-black" href="#products"></a>
+                        <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Register</a>
+                        <div id="modal-overflow" uk-modal>
+                              <div class="uk-modal-dialog">
+                                  <button class="uk-modal-close-default" type="button" uk-close></button>
+                                  <div class="uk-modal-body" uk-overflow-auto>
+                                    <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
+                                      <div class="uk-margin-large-top">
+                                        <div class="uk-inline">
+                                          <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                          <input id="nombre" class="uk-input" type="text">
+                                        </div>
+                                      </div>
+                                      <div class="uk-margin">
+                                        <div class="uk-inline">
+                                          <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                          <input class="uk-input" id="contraseña" type="password">
+                                        </div>
+                                      </div>
+                                      <div class="uk-margin">
+                                           <div class="uk-inline">
+                                               <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                               <input class="uk-input" id="mail" type="text">
+                                           </div>
+                                       </div>
+                                       <div class="uk-modal-footer uk-text-right">
+                                         <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->
+                                           <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                           <!-- Formularios: onsubmit: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
+                                           <button class="uk-button uk-button-primary" type="submit">Save</button>
+                                       </div>
+                                    </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
                       <li class="li-login"><a class="color-black" href="#products"></a>
                         <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
                         <div id="modal-overflow" uk-modal>
@@ -67,12 +107,18 @@
                                           <input class="uk-input" id="contraseña" type="password">
                                         </div>
                                       </div>
-                                      <div class="uk-modal-footer uk-text-right">
-                                        <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->
-                                          <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                          <!-- Formularios: onsubmit: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
-                                          <button class="uk-button uk-button-primary" type="submit">Save</button>
-                                      </div>
+                                      <div class="uk-margin">
+                                           <div class="uk-inline">
+                                               <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                               <input class="uk-input" id="mail" type="text">
+                                           </div>
+                                       </div>
+                                       <div class="uk-modal-footer uk-text-right">
+                                         <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->
+                                           <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                           <!-- Formularios: onsubmit: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
+                                           <button class="uk-button uk-button-primary" type="submit">Save</button>
+                                       </div>
                                     </form>
                                   </div>
                               </div>
