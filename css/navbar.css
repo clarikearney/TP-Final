@@ -36,6 +36,7 @@ nav ul {
   margin-right: 0;
   padding: 0;
   text-align: center;
+  justify-content: space-around;
 }
 nav ul li {
   margin: 0;
@@ -43,7 +44,7 @@ nav ul li {
   flex-direction: row;
   list-style-type: none;
   font-size: 1.5rem;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 nav ul li a {
   text-decoration: none;
@@ -61,6 +62,11 @@ nav ul li a:hover {
 #nombre-de-usuario {
   padding: 2%;
 }
+
+main {
+  margin-top: 100px;
+}
+
 footer {
     width: 100%;
     /* position: fixed; */
@@ -68,14 +74,26 @@ footer {
     left: 0;
     background: #3898F9;
     color: white;
-    padding-top: 0.5%;
-    height: 180px;
 }
 footer div.copyright {
   margin-left: 50%;
+  height: 150px;
+  padding-top: 0.5%;
 }
 footer div.copyright img.img-poweredby{
   width: 11%;
+}
+footer h2.mcm {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+footer img.img-poweredby {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+footer h6 {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 /*lista sin desplegar*/

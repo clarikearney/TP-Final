@@ -30,5 +30,9 @@ window.addEventListener("load", function() {
       .catch(function(error) {
         console.log("Error: " + error);
       })
-
+      var link_envio = document.querySelector(".link_envio")
+      link_envio.onclick = function () {
+        var formulario = document.querySelector(".form_envio")
+        formulario.submit();
+      }
 })
