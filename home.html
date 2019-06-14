@@ -27,8 +27,8 @@
           <header>
               <nav>
                   <ul class="ul-menu">
-                      <li class="li-logo">
-                        <img class="logo" src="img/abstractlogo.png" alt="">
+                      <li id="li-logo">
+                        <img src="img/abstractlogo.png" alt="">
                       </li>
                       <li class="li-menu">
                         <a  class="color-black" href="home.html">Home</a>
@@ -49,7 +49,7 @@
                       <li>
                         <div class="uk-margin">
                             <form action="buscador.html" method="get" class="uk-search uk-search-default">
-                                <!--get envia busqueda en el html -->
+                                <!--get envia busqueda en el html y guarda data en la url -->
                                 <a href="js/buscador.js" class="uk-search-icon-flip" uk-search-icon></a>
                                 <input class="uk-search-input" type="search" name="query" placeholder="Search...">
                             </form>
@@ -95,7 +95,7 @@
                               </div>
                           </div>
                       </li>
-                      <li class="li-login"><a class="color-black" href="#products"></a>
+                      <li class="li-register"><a class="color-black" href="#products"></a>
                         <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
                         <div id="modal-overflow" uk-modal>
                               <div class="uk-modal-dialog">

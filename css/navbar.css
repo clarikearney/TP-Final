@@ -32,12 +32,10 @@ header nav {
 nav ul {
   display: flex;
   position: fixed;
+  width: 100%;
   margin-right: 0;
   padding: 0;
   text-align: center;
-}
-nav ul li.li-menu {
-  margin-left: 12%;
 }
 nav ul li {
   margin: 0;
@@ -45,6 +43,7 @@ nav ul li {
   flex-direction: row;
   list-style-type: none;
   font-size: 1.5rem;
+  justify-content: space-around;
 }
 nav ul li a {
   text-decoration: none;
@@ -53,10 +52,10 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
-nav li.li-logo {
-  margin-left: 0;
-  width: 400px;
-  padding-top: 0.2%;
+#li-logo {
+  margin-left:0;
+  width: 90px;
+  padding-top: 0.5%;
 }
 
 #nombre-de-usuario {
