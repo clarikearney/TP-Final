@@ -19,8 +19,8 @@ var url = "https://api.themoviedb.org/3/movie/upcoming?api_key=95b9e84c8317f917c
           var id = arrayDeGifs[i].id
           var title = arrayDeGifs[i].title
           var imagenpelicula = arrayDeGifs[i].poster_path
-          document.querySelector(".ul-proximas").innerHTML += "<li> <img src=" + imgPath + imagenpelicula + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div></li>"
-          document.querySelector("#proximamente").innerHTML += "<a href=detallepeli.html </a>"
+          document.querySelector(".ul-proximas").innerHTML += "<li><a href='detallepeli.html?idDePelicula="+id+"'> <img src=" + imgPath + imagenpelicula + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div></a></li>"
+          document.querySelector("#proximamente").innerHTML += "<a href='detallepeli.html'> </a>"
         }
       })
       .catch(function(error) {
