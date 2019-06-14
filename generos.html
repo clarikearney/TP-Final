@@ -24,7 +24,7 @@
 
       </head>
       <body>
-        <div class="access-allowed">
+       <div class="access-allowed">
             <header>
                 <nav>
                     <ul class="ul-menu">
@@ -50,7 +50,7 @@
                         <li>
                           <div class="uk-margin">
                               <form action="buscador.html" method="get" class="uk-search uk-search-default">
-                                  <!--get envia busqueda en el html -->
+                                  <!-- get envia busqueda en el html -->
                                   <a href="js/buscador.js" class="uk-search-icon-flip" uk-search-icon></a>
                                   <input class="uk-search-input" type="search" name="query" placeholder="Search...">
                               </form>
@@ -135,9 +135,17 @@
                     </ul>
                 </nav>
             </header>
+
         <main>
 
-       <p class="pelis-genero"> </p>
+          <div class="uk-position-relative uk-visible-toggle clase-peli" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+            <ul class="uk-slideshow-items pelis-genero">
+            </ul>
+            <div class="uk-light">
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+            </div>
+        </div>
 
         </main>
         <footer>
@@ -147,9 +155,6 @@
             </div>
         </footer>
 
-
-<!--quiero que al hacer click en la lista de generos de mi pagina me redirija a una lista con las pelis del genero-->
-
       </div>
 
     </body>
@@ -157,7 +162,6 @@
 <script type="text/javascript" src="js/listageneros.js"></script>
 <script type="text/javascript" src="js/generos.js"></script>
 <script type="text/javascript" src="js/buscador.js"></script>
-<script type="text/javascript" src="js/watchlist.js"></script>
 <script type="text/javascript" src="js/popular.js"></script>
 <script type="text/javascript" src="js/proximas.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
