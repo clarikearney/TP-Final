@@ -39,7 +39,6 @@ theForm.onsubmit = function (event) {
      span.innerText = nombre;
   }
   }
-}
 
 // si no hay datos, preventDefault    if (boton.value == ""|| boton2.value == ""){
 // si hay datos, else (ya me cargaron datos)
