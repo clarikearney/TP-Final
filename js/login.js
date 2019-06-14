@@ -36,7 +36,7 @@ theForm.onsubmit = function (event) {
     login.style.display = "none";
      var nombre = localStorage.getItem("nombre");
      var span = document.querySelector("#nombre-de-usuario")
-     span.innerText = nombre;
+     span.innerText = name;
   }
   }
 
