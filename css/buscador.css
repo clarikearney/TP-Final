@@ -1,11 +1,6 @@
 #buscador {
   z-index: 99;
-  /* margin-top: 2px;
-  margin-left: 2px;
-  margin-right: 2px; */
 }
-ul.detalle {
-  margin-top: 2px;
-  margin-left: 2px;
-  margin-right: 2px;
+main {
+  margin-top: 90px;
 }
