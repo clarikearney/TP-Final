@@ -4,5 +4,7 @@
 
 main .clase-peli {
   width: 30%;
+  margin-top: 80px;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
