@@ -1,8 +1,8 @@
+// js que me tira el detalle de las peliculas con toda la info 
 window.addEventListener("load", function() {
 
   var imgPath = "https://image.tmdb.org/t/p/original"
-  var queryString = new URLSearchParams(window.location.search)
-  var idDetalle = queryString.get("id")
+  var queryString = new URLSearchParams(window.location.search).get("id")
 
     fetch("https://api.themoviedb.org/3/movie/" + idDetalle + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US")
       .then(function(respuesta) {
@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
         //  var trailer = arrayDePeliculas [i].
 
 
-        document.querySelector("").innerHTML += "<li ><img src='" + imgPath + imagenpeli + "' alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div></li>"
+        document.querySelector(".").innerHTML += "<li><img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div></li>"
 
         }
       })
