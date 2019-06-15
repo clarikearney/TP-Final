@@ -22,12 +22,12 @@ window.addEventListener("load", function() {
           var generos= ""
           for (var i=0; i < arrayDeGeneros.lenght; i++){
             generos += arrayDeGeneros[i].name + ", "
-          }// tiene que estar linkeado a pag de generos!
+          }
           var lenguajepeli = pelicula.original_language
-          var fechaEstreno = pelicula.
+        //  var fechaEstreno = pelicula.
         //  var trailer =
 
-        document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a> </p></li>"
+        document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a></p></li>"
 
       })
       .catch(function(error) {
