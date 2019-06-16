@@ -1,4 +1,3 @@
-
 // primero chequear si se envia el formulario (agarro el formulario: querySelector): var Form = document.querySelector(#myForm)
 // lo guardo en una variable (var nombre y var contraseña)
 // cuando se envia el formulario (theForm.onsubmit):
