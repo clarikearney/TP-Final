@@ -11,6 +11,7 @@ theForm.onsubmit = function (event) {
   var boton = document.querySelector("#nombre")
   var boton2 = document.querySelector("#contraseña")
   var boton3 = document.querySelector("#mail");
+  var boton4 = document.querySelector("#gender");
 
   if(boton.value == "" || boton2.value == "" || boton3.value == ""){
     event.preventDefault();
@@ -24,9 +25,11 @@ theForm.onsubmit = function (event) {
     var name = boton.value;
     var pass = boton2.value;
     var mail = boton3.value;
+    var gender = boton4.value;
     localStorage.setItem("nombre",name);
     localStorage.setItem("nombre",pass);
     localStorage.setItem("mail",mail);
+    localStorage.setItem("name",gender);
     console.log(name);
     console.log(localStorage);
     var modal = document.querySelector("#modal-overflow")
@@ -36,8 +39,12 @@ theForm.onsubmit = function (event) {
      var nombre = localStorage.getItem("nombre");
      var span = document.querySelector("#nombre-de-usuario")
      span.innerText = name;
+     var boton4 = document.querySelector("select[name='gender'"])
   }
   }
+
+
+
 
 // si no hay datos, preventDefault    if (boton.value == ""|| boton2.value == ""){
 // si hay datos, else (ya me cargaron datos)
