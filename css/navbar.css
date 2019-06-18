@@ -67,6 +67,14 @@ main {
   margin-top: 100px;
   margin-bottom: 10px;
 }
+section {
+  z-index: 99;
+}
+section div {
+  width: 30%;
+  margin-left: 40%;
+  margin-bottom: 2.5%;
+}
 
 footer {
     width: 100%;
@@ -108,3 +116,76 @@ footer h6 {
 #contenedor:hover > #desplegable {
   display: block;
 }
+
+@media screen and (max-width: 420px) {
+  section.home article.img-container {
+    max-height: 100vw;
+    min-height: 300px;
+  }
+
+  /* Para el formato telefono no hace falta agregar atributos si no decir que no haga lo que estaba haciendo
+  Por default el elemento (section,article,div) tratan de abarcar el 100% del ancho (son elementos de bloque), sin margen a la derecha y sin flotación
+  Hay que especificarle que no haga esas cosas */
+
+  header nav {
+    height: 200px;
+  }
+  nav ul {
+  flex-direction: column;
+  }
+  nav ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  #li-logo {
+    margin-left:2%;
+    width: 20px;
+  }
+  main {
+    margin-top: 205px;
+    margin-bottom: 10px;
+  }
+  main section h5 {
+    margin-left: 40%;
+  }
+div.uk-margin {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#nombre-de-usuario {
+  padding: 0;
+}
+  footer {
+      width: 100%;
+      /* position: fixed; */
+      bottom: 0;
+      left: 0;
+      background: #3898F9;
+      color: white;
+      margin-left: 0%;
+      height: 100px;
+      padding-top: 0.5%;
+      padding-left: 0px;
+  }
+  div.copyright {
+    padding: 0;
+    margin-left: 40%;
+  }
+  footer h2 {
+    font-size: 1rem;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+  }
+  footer h6 {
+    font-size: 1rem;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+  }
+  footer div.copyright img.img-poweredby{
+    width: 30%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    padding-left: 2%;
+  }

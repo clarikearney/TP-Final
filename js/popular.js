@@ -20,12 +20,12 @@ window.addEventListener("load", function() {
           var id = arrayDeGifs[i].id
           var title = arrayDeGifs[i].title
           var imagenpelicula = arrayDeGifs[i].poster_path
-          document.querySelector(".ul-popular").innerHTML += "<li><img src=" + imgPath +imagenpelicula + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div></li>"
+          document.querySelector(".ul-popular").innerHTML += "<li><a href='detallepeli.html?idDePelicula="+id+"' ><img src=" + imgPath + imagenpelicula + " alt='' uk-cover ><div class='uk-position-center uk-position-small uk-text-center uk-light' ><h2 class='uk-margin-remove'>" + title + "</h2></div></a></li>"
         }
 
-      })
-      .catch(function(error) {
-        console.log("Error: " + error);
-      })
+       })
+       .catch(function(error) {
+         console.log("Error: " + error);
+       })
 
-})
+ })
