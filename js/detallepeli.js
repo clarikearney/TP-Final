@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
   var imgPath = "https://image.tmdb.org/t/p/original"
   var idDePelicula = new URLSearchParams(window.location.search).get("idDePelicula")
 
-    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131")
+    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula +"?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
     .then(function(respuesta) {
         return respuesta.json()
       })
