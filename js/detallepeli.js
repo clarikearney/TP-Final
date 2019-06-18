@@ -23,6 +23,7 @@ window.addEventListener("load", function() {
           for (var i=0; i < arrayDeGeneros.lenght; i++){
             generos += arrayDeGeneros[i].name + ", "
           }
+          //hasta aca llegue bien!
           var lenguajepeli = pelicula.original_language
         //  var fechaEstreno = pelicula.
         //  var trailer =
