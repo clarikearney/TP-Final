@@ -132,16 +132,22 @@ footer h6 {
   }
 
   #li-logo {
-    margin-left:0;
+    margin-left:2%;
     width: 20px;
   }
   main {
     margin-top: 205px;
     margin-bottom: 10px;
   }
-
-.uk-margin {
-  margin-bottom: 0;
+  main section h5 {
+    margin-left: 40%;
+  }
+div.uk-margin {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#nombre-de-usuario {
+  padding: 0;
 }
 
 
@@ -161,6 +167,7 @@ footer h6 {
   }
   div.copyright {
     padding: 0;
+    margin-left: 40%;
   }
   footer h2 {
     font-size: 1rem;
