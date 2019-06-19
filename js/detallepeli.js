@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
   var imgPath = "https://image.tmdb.org/t/p/original"
   var idDePelicula = new URLSearchParams(window.location.search).get("idDePelicula")
 
-/*   // INICIO BLOQUE 1 - Leer el array de storage
+ // INICIO BLOQUE 1 - Leer el array de storage
 
    // Paso 1 - Leo de localStorage
    var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
@@ -18,7 +18,6 @@ window.addEventListener("load", function() {
      var favoritas = objLit.caracteristica;
    }
    // CIERRA BLOQUE 1
-*/
 
     fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
     .then(function(respuesta) {
@@ -60,9 +59,8 @@ window.addEventListener("load", function() {
       //  document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a></p></li>"
 
       })
-     //INICIO BLOQUE 2 - si la peli ya era favorita que aparezca pintada la estrella
-/*      if (favoritas.indexOf(idPelicula) >= 0 ) {
-        PONER LA ESTRELLA YA PINTADA
+ //INICIO BLOQUE 2 - si la peli ya era favorita que aparezca pintada la estrella
+      if (favoritas.indexOf(idPelicula) >= 0 ) {
       }
        // FIN BLOQUE 2
 
@@ -70,13 +68,15 @@ window.addEventListener("load", function() {
 
        document.querySelector("ESTRELLA").onclick = function () {
          // Bloque 3 A - Modifico el array
-         if (favoritas.indexOf(idPelicula) >= 0 ) {
+         if (favoritas.indexOf(idDePelicula) >= 0 ) {
           // la quito
-          var pos= favoritas.indexOf(idPelicula)
+          var pos = favoritas.indexOf(idDePelicula)
           favoritas.splice(pos,1)
+        //  document.querySelector(."estrellita").style.backgroundcolor
         } else {
            favoritas.push(idPelicula)
-           PINTAR LA ESTRELLA
+        //   document.querySelector(".estrellita").style.backgroundcolor
+
          }
          // FIN BLOQUE 3A
 
@@ -95,5 +95,4 @@ window.addEventListener("load", function() {
       .catch(function(error) {
         console.log("Error: " + error);
       })
-      */
     })
