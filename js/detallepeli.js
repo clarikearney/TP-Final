@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
   var imgPath = "https://image.tmdb.org/t/p/original"
   var idDePelicula = new URLSearchParams(window.location.search).get("idDePelicula")
 
-   // INICIO BLOQUE 1 - Leer el array de storage
+/*   // INICIO BLOQUE 1 - Leer el array de storage
 
    // Paso 1 - Leo de localStorage
    var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
@@ -18,16 +18,16 @@ window.addEventListener("load", function() {
      var favoritas = objLit.caracteristica;
    }
    // CIERRA BLOQUE 1
+*/
 
-
-    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula +"?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
+    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
     .then(function(respuesta) {
         return respuesta.json()
       })
       .then(function(informacion) {
         console.log(informacion);
 
-        var pelicula = informacion
+       var pelicula = informacion
           var id = pelicula.id
           var title = pelicula.title
           var imagenpeli = pelicula.poster_path
@@ -35,7 +35,7 @@ window.addEventListener("load", function() {
           var sinopsis = pelicula.overview
           var lenguajepeli = pelicula.spoken_language
           var fechaEstreno = pelicula.release_date
-        // hasta aca llegue bien!
+
        var li = ''
         li += '<li>'
         li += '<h2>' + title + '</h2>'
@@ -61,7 +61,7 @@ window.addEventListener("load", function() {
 
       })
      //INICIO BLOQUE 2 - si la peli ya era favorita que aparezca pintada la estrella
-      if (favoritas.indexOf(idPelicula) >= 0 ) {
+/*      if (favoritas.indexOf(idPelicula) >= 0 ) {
         PONER LA ESTRELLA YA PINTADA
       }
        // FIN BLOQUE 2
@@ -95,23 +95,5 @@ window.addEventListener("load", function() {
       .catch(function(error) {
         console.log("Error: " + error);
       })
+      */
     })
-
-// nuevo fetch de recomendaciones
-
-fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&page=1")
-.then (function(response)) {
-  return respuesta.json()
-})
-
-.then(function(information) {
-  console.log(information);
-  console.log(information.results);
-}
-var arrayDePeliculas = information.results
-
-for (var i=0, i < arrayDePeliculas.length; i++)
-   var id = arrayDePeliculas[i].id
-   var poster= arrayDePeliculas[i].poster_path
-
-document.querySelector(".recomendaciones").innerHTML += "<p>" "<a href='detallepeli.html?idPelicula=" + id +"'> <img class= uk
