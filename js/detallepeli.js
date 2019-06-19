@@ -16,13 +16,17 @@ window.addEventListener("load", function() {
           var title = pelicula.title
           var imagenpeli = pelicula.poster_path
           var arrayDeGeneros = pelicula.genres
-          var lenguajepeli = pelicula.original_language
+          var sinopsis = pelicula.overview
+          var lenguajepeli = pelicula.spoken_language
+          var fechaEstreno = pelicula.release_date
         // hasta aca llegue bien!
        var li = ''
         li += '<li>'
         li += '<h2>' + title + '</h2>'
         li += '<img src=' + imgPath + imagenpeli + '>'
-        li += '<h3>' + lenguajepeli + '</h3>'
+        li += '<h4>' + sinopsis + '</h4>'
+        li += '<h4>' + "Fecha de estreno: " + fechaEstreno + '</h4>'
+        li += '<h4>' + "Lenguaje: " + lenguajepeli + '</h4>'
         li += '<h3>'
         for (var i=0; i < arrayDeGeneros.length; i++){
               li += '<a href="generos.html?idGenero=' + arrayDeGeneros[i].id + '">'
