@@ -2,17 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Detalle películas</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+
     <link rel="stylesheet" href="css/navbar.css">
-    <!-- <link rel="stylesheet" href="css/uikit-rtl.css">
+    <link rel="stylesheet" href="css/uikit-rtl.css">
     <link rel="stylesheet" href="css/uikit-rtl.min.css">
-    <link rel="stylesheet" href="css/uikit.css"> -->
+    <link rel="stylesheet" href="css/uikit.css">
     <link rel="stylesheet" href="css/uikit.min.css">
-    <link rel="stylesheet" href="css/login.css">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
     <meta name="viewport" content="width=device-width, user-scalable=no">
+
 
   </head>
   <body>
@@ -68,8 +72,11 @@
                                   </div>
                                   <div class="uk-margin">
                                     <div class="uk-inline">
-                                      <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                      <input class="uk-input" id="contraseña" type="password">
+                                     <select class="gender" name="">
+                                       <option value="f">female</option>
+                                       <option value="m">male</option>
+                                       <option value="o">other</option>
+                                     </select>
                                     </div>
                                   </div>
                                   <div class="uk-margin">
@@ -77,6 +84,12 @@
                                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
                                            <input class="uk-input" id="mail" type="text">
                                        </div>
+                                   </div>
+                                   <div class="uk-margin">
+                                     <div class="uk-inline">
+                                       <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                       <input class="uk-input" id="contraseña" type="password">
+                                     </div>
                                    </div>
                                    <div class="uk-modal-footer uk-text-right">
                                      <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->

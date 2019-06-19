@@ -4,9 +4,7 @@
 
 span{
   color: #FFF;
-  margin: 0;
 }
-
 body {
   margin: 0;
   border: 0;
@@ -15,9 +13,9 @@ body {
   font-family: Russo One;
   font-size: 1rem;
 }
-div.access-allowed {
+/* div.access-allowed {
   position: relative;
-}
+} */
 header {
   width: 100%;
   position: fixed;
@@ -54,9 +52,9 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
-#li-logo {
+#li-logo img{
   margin-left:0;
-  width: 90px;
+  width: 40px;
   padding-top: 0.5%;
 }
 
@@ -67,14 +65,12 @@ nav ul li a:hover {
 main {
   margin-top: 100px;
   margin-bottom: 10px;
-}
-section {
-  z-index: 99;
-}
-section div {
   width: 30%;
   margin-left: 40%;
   margin-bottom: 2.5%;
+}
+section {
+  z-index: 99;
 }
 
 footer {
