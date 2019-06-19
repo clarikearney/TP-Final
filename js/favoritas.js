@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
         var li;
 
          li = "<li>"
-         li += "<a href=''></a>"
+         li += "<a href=''>" 
          li += "<h2>" + pelicula.title + "</h2>"
          li += "<img src='"+ urlImg + pelicula.poster_path + "'>"
          li += "</a>"
