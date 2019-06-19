@@ -13,9 +13,8 @@ window.addEventListener("load", function() {
      var favoritas = []
    } else {
      // Paso 2 - Desempaqueto el json
-     var objLit = JSON.parse(jsonFavoritas)
-   // Paso 3 - Leo el obj. lit, la caract. importante
-     var favoritas = objLit.caracteristica;
+     var favoritas = JSON.parse(jsonFavoritas)
+
    }
    // CIERRA BLOQUE 1
 
@@ -58,39 +57,40 @@ window.addEventListener("load", function() {
         ul.innerHTML += li
       //  document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a></p></li>"
 
-      })
+
  //INICIO BLOQUE 2 - si la peli ya era favorita que aparezca pintada la estrella
-      if (favoritas.indexOf(idPelicula) >= 0 ) {
+      if (favoritas.indexOf(idDePelicula) >= 0 ) {
+        document.querySelector(".estrellita").style.backgroundColor = "gold"
       }
        // FIN BLOQUE 2
 
        // INICIO BLOQUE 3 - que pasa al clikear la estrella
 
-       document.querySelector("ESTRELLA").onclick = function () {
+       document.querySelector(".estrellita").onclick = function () {
          // Bloque 3 A - Modifico el array
          if (favoritas.indexOf(idDePelicula) >= 0 ) {
           // la quito
           var pos = favoritas.indexOf(idDePelicula)
           favoritas.splice(pos,1)
+          document.querySelector(".estrellita").style.backgroundColor = "white"
         //  document.querySelector(."estrellita").style.backgroundcolor
         } else {
-           favoritas.push(idPelicula)
+           favoritas.push(idDePelicula)
         //   document.querySelector(".estrellita").style.backgroundcolor
+        document.querySelector(".estrellita").style.backgroundColor = "gold"
 
          }
          // FIN BLOQUE 3A
 
          // BLOQUE 3B
-         var objLit = {
-           caracteristica: favoritas
-         }
-         var JSON = JSON.stringify(objLit)
+
+         var json = JSON.stringify(favoritas)
 
          localStorage.setItem("peliculasFavoritas", json)
 
          // FIN BLOQUE 3B
        }
-
+    })
        // FIN BLOQUE 3
       .catch(function(error) {
         console.log("Error: " + error);
