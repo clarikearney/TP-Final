@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("favorita"));
 
   // chequeo si el array tiene por lo menos una peli favorita
-  if (arrayDePelisFavoritas.lenght<0) {
+  if (arrayDePelisFavoritas.lenght < 0) {
   //como arrayDePelisFavoritas es un array, necesito recorrerlo
   for (var i = 0; i < arrayDePelisFavoritas.length; i++) {
     //recorro el array
@@ -16,17 +16,20 @@ window.addEventListener("load", function () {
         return respuesta.json()
       })
       .then(function(informacion) {
-        // guarda en pelicula el objetio literal que recibo como rta
+        // guardo en pelicula el objetio literal que recibo como rta
         console.log(informacion)
+        // capturo el UL para insertar dentro de el, cada peli como LI
         var ul = document.querySelector("section ul")
+        // genero el LI
         var li;
 
          li = "<li>"
-         li += "<a href=''>" 
+         li += "<a href=''>"
          li += "<h2>" + pelicula.title + "</h2>"
          li += "<img src='"+ urlImg + pelicula.poster_path + "'>"
          li += "</a>"
          li += "</li>"
+         //modifico el HTML del UL
          ul.innerHTML += li
   }
 .catch(function(error) {

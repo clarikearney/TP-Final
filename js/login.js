@@ -39,7 +39,7 @@ theForm.onsubmit = function (event) {
      var nombre = localStorage.getItem("nombre");
      var span = document.querySelector("#nombre-de-usuario")
      span.innerText = name;
-     var boton4 = document.querySelector("select[name='gender'"])
+     var boton4 = document.querySelector("select[name='gender']")
   }
   }
 
