@@ -1,7 +1,7 @@
 window.addEventListener("load", function() {
 
 // la función que aparece por debajo dice que cada vez que el
-// usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información. Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en el campo nombre, porque el usuario ya esta logueado, tiene que escribirse el nombre escrito por el usuario 
+// usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información. Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en el campo nombre, porque el usuario ya esta logueado, tiene que escribirse el nombre escrito por el usuario
 
 
   if (localStorage.getItem("nombre") != null) {
