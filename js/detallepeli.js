@@ -12,20 +12,32 @@ window.addEventListener("load", function() {
         console.log(informacion);
 
         var pelicula = informacion
-        console.log(pelicula);
-
-
           var id = pelicula.id
           var title = pelicula.title
           var imagenpeli = pelicula.poster_path
           var arrayDeGeneros = pelicula.genres
-          var generos= ""
-          for (var i=0; i < arrayDeGeneros.lenght; i++){
-            generos += arrayDeGeneros[i].name + ", "
-          }
           var lenguajepeli = pelicula.original_language
-         // hasta aca llegue bien!
-        document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a></p></li>"
+        // hasta aca llegue bien!
+       var li = ''
+        li += '<li>'
+        li += '<h2>' + title + '</h2>'
+        li += '<img src=' + imgPath + imagenpeli + '>'
+        li += '<h3>' + lenguajepeli + '</h3>'
+        li += '<h3>'
+        for (var i=0; i < arrayDeGeneros.length; i++){
+              li += '<a href="generos.html?idGenero=' + arrayDeGeneros[i].id + '">'
+              li += arrayDeGeneros[i].name
+              if (i < arrayDeGeneros.length-1) {
+                li += ' / '
+              }
+              li += '</a>'
+        }
+        li += '</h3>'
+        li += '</li>'
+        var ul = document.querySelector(".detalle-peli")
+       //.innerHTML += "<li> <a href='detallepeli.html?idDePelicula="+id+"'> <img src=" + imgPath + imagenpelicula + " alt='' uk-cover> <div class='uk-position-center uk-position-small uk-text-center uk-light'> <h2 class='uk-margin-remove'>" + title + "</h2></div></a></li>"
+        ul.innerHTML += li
+      //  document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a></p></li>"
 
       })
       .catch(function(error) {
