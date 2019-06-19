@@ -4,6 +4,22 @@ window.addEventListener("load", function() {
   var imgPath = "https://image.tmdb.org/t/p/original"
   var idDePelicula = new URLSearchParams(window.location.search).get("idDePelicula")
 
+   // INICIO BLOQUE 1 - Leer el array de storage
+
+   // Paso 1 - Leo de localStorage
+   var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
+
+   if (jsonFavoritas == null) {
+     var favoritas = []
+   } else {
+     // Paso 2 - Desempaqueto el json
+     var objLit = JSON.parse(jsonFavoritas)
+   // Paso 3 - Leo el obj. lit, la caract. importante
+     var favoritas = objLit.caracteristica;
+   }
+   // CIERRA BLOQUE 1
+
+
     fetch("https://api.themoviedb.org/3/movie/" + idDePelicula +"?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
     .then(function(respuesta) {
         return respuesta.json()
@@ -44,7 +60,58 @@ window.addEventListener("load", function() {
       //  document.querySelector(".detalle-peli").innerHTML += "<li><h1>" + title + "</h1> <img src=" + imgPath + imagenpeli + " alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + "<p> <a href=generos.html" + generos + "</a></p></li>"
 
       })
+     //INICIO BLOQUE 2 - si la peli ya era favorita que aparezca pintada la estrella
+      if (favoritas.indexOf(idPelicula) >= 0 ) {
+        PONER LA ESTRELLA YA PINTADA
+      }
+       // FIN BLOQUE 2
+
+       // INICIO BLOQUE 3 - que pasa al clikear la estrella
+
+       document.querySelector("ESTRELLA").onclick = function () {
+         // Bloque 3 A - Modifico el array
+         if (favoritas.indexOf(idPelicula) >= 0 ) {
+          // la quito
+          var pos= favoritas.indexOf(idPelicula)
+          favoritas.splice(pos,1)
+        } else {
+           favoritas.push(idPelicula)
+           PINTAR LA ESTRELLA
+         }
+         // FIN BLOQUE 3A
+
+         // BLOQUE 3B
+         var objLit = {
+           caracteristica: favoritas
+         }
+         var JSON = JSON.stringify(objLit)
+
+         localStorage.setItem("peliculasFavoritas", json)
+
+         // FIN BLOQUE 3B
+       }
+
+       // FIN BLOQUE 3
       .catch(function(error) {
         console.log("Error: " + error);
       })
     })
+
+// nuevo fetch de recomendaciones
+
+fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&page=1")
+.then (function(response)) {
+  return respuesta.json()
+})
+
+.then(function(information) {
+  console.log(information);
+  console.log(information.results);
+}
+var arrayDePeliculas = information.results
+
+for (var i=0, i < arrayDePeliculas.length; i++)
+   var id = arrayDePeliculas[i].id
+   var poster= arrayDePeliculas[i].poster_path
+
+document.querySelector(".recomendaciones").innerHTML += "<p>" "<a href='detallepeli.html?idPelicula=" + id +"'> <img class= uk
