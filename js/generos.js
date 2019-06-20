@@ -1,10 +1,13 @@
 // quiero que al cliquear en mi genero la pagina web me redirija a las paginas de los generos que
 // selecciono el usuario!
 window.addEventListener("load", function() {
-  var imgPath = "https://image.tmdb.org/t/p/original"
+ var imgPath = "https://image.tmdb.org/t/p/original"
+//var queryString= new URLSearchParams(window.location.search);
+//var genre = queryString.get("id");
+//var nameGenre = queryString.get("title");
+//document.querySelector("main h2").innerHTML += nameGenre + 'Movies'
+var idGenero = new URLSearchParams(location.search).get("id")
 
-    var idGenero = new URLSearchParams(location.search).get("id")
-//
     fetch("https://api.themoviedb.org/3/discover/movie?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + idGenero) //
       .then(function(respuesta) {
         return respuesta.json()
