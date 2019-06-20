@@ -187,7 +187,3 @@ div.uk-margin {
   }
 
   }
-
-  /* Para el formato telefono no hace falta agregar atributos si no decir que no haga lo que estaba haciendo
-  Por default el elemento (section,article,div) tratan de abarcar el 100% del ancho (son elementos de bloque), sin margen a la derecha y sin flotación
-  Hay que especificarle que no haga esas cosas */
