@@ -22,14 +22,18 @@ window.addEventListener("load", function() {
           var lenguajepelicula = arrayDePeliculas[i].original_language
           var imagenpelicula = arrayDePeliculas[i].poster_path
           //document.querySelector(".ul-puntaje").innerHTML += "<article class='article-movie'><h2>" + title + "</h2> <img src=" + imgPath +imagenpelicula + "></article>"
-    /*    var li = ''
-         li += '<li>'
-         li += '<a href="detallepeli.html?idDePelicula=' + id + '"'
-         li += '</a>'
-         li += '</li>'
+          var li = ''
+          li += '<li>'
+          li += '<a href="detallepeli.html?idDePelicula=' + id +'"'
+          // li += '<li>'
+          // li += '<a href="">'
+          li += '<h2>' + title + '</h2>'
+          li += '<img src=' + imgPath + imagenpelicula + '>'
+          li += '</a>'
+          li += '</li>'
          var ul = document.querySelector(".detalle")
-         ul.innerHTML += li */
-    document.querySelector(".detalle").innerHTML += "<li><img src='" + imgPath +imagenpelicula +  "' alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div> </a> </li>"
+         ul.innerHTML += li
+//    document.querySelector(".detalle").innerHTML += "<li><img src='" + imgPath +imagenpelicula +  "' alt='' uk-cover><div class='uk-position-center uk-position-small uk-text-center uk-light'><h2 class='uk-margin-remove'>" + title + "</h2></div> </a> </li>"
         }
       })
       .catch(function(error) {
