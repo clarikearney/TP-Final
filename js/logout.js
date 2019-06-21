@@ -1,4 +1,4 @@
-window.addEventListener("load",function() {
+/* window.addEventListener("load",function() {
   console.log();
   if ((window.sessionStorage.getItem('nombre') != null)) {
     var li  = '<li>'
@@ -13,4 +13,4 @@ window.addEventListener("load",function() {
     }
 
   }
-}
+}*/
