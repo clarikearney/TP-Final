@@ -31,7 +31,7 @@ window.addEventListener("load", function() {
           var imagenpeli = pelicula.poster_path
           var arrayDeGeneros = pelicula.genres
           var sinopsis = pelicula.overview
-          var lenguajepeli = pelicula.spoken_language
+          var lenguajepeli = pelicula.original_language
           var fechaEstreno = pelicula.release_date
 
        var li = ''
@@ -43,10 +43,10 @@ window.addEventListener("load", function() {
         li += '<h4>' + "Lenguaje: " + lenguajepeli + '</h4>'
         li += '<h3>'
         for (var i=0; i < arrayDeGeneros.length; i++){
-              li += '<a href="generos.html?idGenero=' + arrayDeGeneros[i].id + '">'
+              li += '<a href="generos.html?id=' + arrayDeGeneros[i].id + '">'
               li += arrayDeGeneros[i].name
               if (i < arrayDeGeneros.length-1) {
-                li += ' / '
+                li += ' - '
               }
               li += '</a>'
         }
@@ -73,10 +73,8 @@ window.addEventListener("load", function() {
           var pos = favoritas.indexOf(idDePelicula)
           favoritas.splice(pos,1)
           document.querySelector(".estrellita").style.backgroundColor = "white"
-        //  document.querySelector(."estrellita").style.backgroundcolor
         } else {
            favoritas.push(idDePelicula)
-        //   document.querySelector(".estrellita").style.backgroundcolor
         document.querySelector(".estrellita").style.backgroundColor = "gold"
 
          }
