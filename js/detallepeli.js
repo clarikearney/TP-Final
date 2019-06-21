@@ -109,7 +109,7 @@ fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?a
       var id = arrayDePeliculas[i].id
       var title = arrayDePeliculas[i].title
       var imagenpelicula = arrayDePeliculas[i].poster_path
-      li = ''
+      var li = ''
       li += '<li>'
       li += '<a href="detallepeli.html?idDePelicula=' + id +'"'
       // li += '<li>'
@@ -119,6 +119,7 @@ fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?a
       li += '</a>'
       li += '</li>'
       var ul = document.querySelector(".recomendaciones")
+
       ul.innerHTML += li
   }
 })
