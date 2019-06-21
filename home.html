@@ -26,8 +26,10 @@
           <header>
               <nav>
                   <ul class="ul-menu">
-                    <!-- hicimos una lista con elementos de lista para hacer un navbar e ir diriguiendo a todas las páginas mediante hipervínculos (a), href indica a dónde quiero que el usuario llegue una vez que haga click en el elemento li. Géneros es una lista desplegable obtenida de la librería uikit. role="button" indica cuál el el rol de esa lista
-                    Necesitabamos incluir una imágen, tres hipervínculos de los cuales uno tiene un dropdown desplegable, un buscador y un boton para logearse -->
+                    <!-- hicimos una lista con elementos de lista para hacer una barra de navegacion que nos permita acceder a todas las páginas mediante hipervínculos (a), href. Esto me indica a dónde quiero que el usuario llegue una vez que haga click en el elemento li.
+                    Géneros es una lista desplegable obtenida de la librería uikit. role="button" indica cuál es el rol de esa lista
+                    El logo de la pagina lo hicimos pensando en la geometria y simplicidad que queriamos brindarle al sitio.
+                    Seguidamente aplicamos tres hipervínculos de los cuales uno tiene un dropdown desplegable, un buscador y un boton para logearse -->
                       <li id="li-logo">
                         <img src="img/abstractlogo.png" alt="">
                       </li>
@@ -45,7 +47,12 @@
                         <a  href="favoritas.html">Favorites</a>
                       </li>
                       <li>
-                        <!-- Para hacer el buscador necesitamos un form, elegimos uno de uikit por una cuestión de estilo. Con action=buscador.html indicamos enviar los datos del formulario cuando se envía el formulario a ese url (ruta relativa:buscador.html). Con method="get" agregamos datos del formulario a la URL así aparece el la url lo que el usuario buscó luego del signo de interrogación. Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda. Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
+                        <!-- Para hacer el buscador necesitabamos un form.
+                        Elegimos uno de uikit por una cuestión de estilo.
+                        Con action=buscador.html indicamos a que pagina se deben enviar los datos del formulario cuando se envía el formulario a ese url (ruta relativa:buscador.html).
+                        Con method="get" agregamos datos del formulario a la URL así aparece en la url lo que el usuario buscó luego del signo de interrogación.
+                        Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda.
+                       Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
                         <div class="uk-margin">
                             <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
                                 <!--get envia busqueda en el html y guarda data en la url --><a class="uk-search-icon-flip link_envio" uk-search-icon></a>
@@ -54,7 +61,7 @@
                         </div>
                       </li>
                       <span id="nombre-de-usuario">
-                      <!-- Este span vacío tiene la función de agregar aquí el nombre del usuario una vez que este se haya logueado -->
+                <!-- Este span vacío tiene la función de agregar aquí el nombre del usuario una vez que este se haya logueado -->
                       </span>
                       <!-- Obtuvimos un modal de uikit para que aparezca un cartel cuando el usuario haga click en el botón login.
                       El botón de login tiene que ir adentro del li y tiene que ir en el nav, por fuera del div obtenido de uikit.-->
@@ -106,7 +113,9 @@
                   </ul>
               </nav>
           </header>
-          <!-- Para visualizar las tres secciones de películas (puntaje, populares, próximos estrenos) elegimos hacerlo mediante un carrusel de uikit (slidehow Content overlays), las clases forman parte del mismo. La clase agregada, también obtenida de uikit, fue "animation: push;ratio: 2:3" porque esa es la forma de controlar las proporciones al decidir trabajar con uikit. Esta decisión se mantuvo en home, buscador, géneros, etc. por una cuestión de coherencia en el estilo-->
+          <!-- Para visualizar las tres secciones de películas (puntaje, populares, próximos estrenos) elegimos hacerlo mediante un carrusel de uikit (slidehow Content overlays), las clases forman parte del mismo.
+          La clase agregada, también obtenida de uikit, fue "animation: push;ratio: 2:3" porque esa es la forma de controlar las proporciones al decidir trabajar con uikit.
+          Esta decisión se mantuvo en home, buscador, géneros, etc. por una cuestión de coherencia en el estilo-->
           <main>
             <section id="puntaje" class="section-puntaje">
               <h5 class="mejor-puntaje">Top Rated!</h5>
@@ -162,6 +171,5 @@
 <script type="text/javascript" src="js/popular.js"></script>
 <script type="text/javascript" src="js/proximas.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
-<script type="text/javascript" src="js/logout.js"></script>
 <script type="text/javascript" src="js/mejorpuntuadas.js"></script>
 <script type="text/javascript" src="js/detallepeli.js"></script>
