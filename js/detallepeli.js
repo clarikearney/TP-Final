@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
 
    }
    // CIERRA BLOQUE 1
-
+// procedo a hacer el fetch, los then y los catch de detallepeli
     fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US")
     .then(function(respuesta) {
         return respuesta.json()
@@ -42,6 +42,7 @@ window.addEventListener("load", function() {
         li += '<h4>' + "Fecha de estreno: " + fechaEstreno + '</h4>'
         li += '<h4>' + "Lenguaje: " + lenguajepeli + '</h4>'
         li += '<h3>'
+        // como los generos estan en un array
         for (var i=0; i < arrayDeGeneros.length; i++){
               li += '<a href="generos.html?id=' + arrayDeGeneros[i].id + '">'
               li += arrayDeGeneros[i].name
