@@ -8,9 +8,9 @@ window.addEventListener("load", function() {
 
    // Paso 1 - Leo de localStorage
    var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
-
+// si json me dice que no tiene favoritas
    if (jsonFavoritas == null) {
-     var favoritas = []
+     var favoritas = [] // creo un array de favoritas
    } else {
      // Paso 2 - Desempaqueto el json
      var favoritas = JSON.parse(jsonFavoritas)
@@ -69,11 +69,11 @@ window.addEventListener("load", function() {
        document.querySelector(".estrellita").onclick = function () {
          // Bloque 3 A - Modifico el array
          if (favoritas.indexOf(idDePelicula) >= 0 ) {
-          // la quito
+          // la quito // cuando hago click en la estrella, que pase a blanco
           var pos = favoritas.indexOf(idDePelicula)
           favoritas.splice(pos,1)
           document.querySelector(".estrellita").style.backgroundColor = "white"
-        } else {
+        } else { // caso contrario, que siga estando pintada
            favoritas.push(idDePelicula)
         document.querySelector(".estrellita").style.backgroundColor = "gold"
 
@@ -81,9 +81,9 @@ window.addEventListener("load", function() {
          // FIN BLOQUE 3A
 
          // BLOQUE 3B
-
+// convierte un objeto o valor de JavaScript en una cadena de texto JSON (vuelve a empaquetar el json)
          var json = JSON.stringify(favoritas)
-
+// esta linea nos guarda la data en el almacenamiento local actual
          localStorage.setItem("peliculasFavoritas", json)
 
          // FIN BLOQUE 3B
@@ -95,6 +95,7 @@ window.addEventListener("load", function() {
       })
 
 /// recomendadas
+// similar a la estructura de popular, proximas y mejor puntuadas. Cambia la API
 fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&page=1")
   .then(function(respuesta) {
     return respuesta.json()

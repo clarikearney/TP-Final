@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.trailer-peli {
+  width: 95%;
+}
+h4.pelis-sugeridas {
+  text-align: center;
+  text-transform: full-width;
+  font-size: 20px;
+  border: 5px inset #39f;
+  border-radius: 7px;
+  margin-top: 20px;
+  padding-top: 0;
+}
