@@ -18,7 +18,7 @@ window.addEventListener("load", function() {
    }
    // CIERRA BLOQUE 1
 
-    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
+    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US")
     .then(function(respuesta) {
         return respuesta.json()
       })
