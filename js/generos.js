@@ -13,7 +13,7 @@ var idGenero = new URLSearchParams(location.search).get("id")
         return respuesta.json()
       })
       .then(function(informacion) {
-        console.log(informacion);
+        console.log(informacion.results);
 
         var arrayDePeliculas = informacion.results
         console.log(arrayDePeliculas);

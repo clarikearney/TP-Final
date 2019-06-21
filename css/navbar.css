@@ -13,9 +13,7 @@ body {
   font-family: Russo One;
   font-size: 1rem;
 }
-/* div.access-allowed {
-  position: relative;
-} */
+
 header {
   width: 100%;
   position: fixed;
@@ -136,12 +134,13 @@ footer h6 {
     width: 20px;
   }
   main {
+    margin-left: 10%;
     margin-top: 205px;
     margin-bottom: 10px;
+    width: 80%;
+    margin-right: 10px;
   }
-  main section h5 {
-    margin-left: 40%;
-  }
+
 div.uk-margin {
     margin-top: 1%;
     margin-bottom: 1%;
@@ -164,7 +163,7 @@ div.uk-margin {
 }
   div.copyright {
     padding: 0;
-    margin-left: 40%;
+    margin-left: 0%;
   }
   footer h2 {
     font-size: 1rem;
@@ -177,7 +176,7 @@ div.uk-margin {
     margin-bottom: 0.5%;
   }
   footer div.copyright {
-    margin-left: 40%;
+    margin-left: 20%;
     height: 0;
     padding-top: 0.5%;
   }
@@ -186,5 +185,4 @@ div.uk-margin {
     margin-top: 0.5%;
     margin-bottom: 0.5%;
   }
-
   }

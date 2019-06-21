@@ -12,8 +12,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
 
-  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/detallepeli.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/uikit-rtl.css">
   <link rel="stylesheet" href="css/uikit-rtl.min.css">
   <link rel="stylesheet" href="css/uikit.css">
@@ -127,21 +127,14 @@
 
         </section>
         <section>
-
-       <div>
-              <br>
-               <h4 class="pelis-sugeridas"> Peliculas Recomendadas </h4>
-             </br>
-<!-- Si bien podemos mostrar las peliculas recomendadas, no llegamos a aplicarle un carrousel correspondiente -->
-            <div class="uk-position-relative uk-visible-toggle recomendaciones" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
-               <ul class="uk-slideshow-items recomendaciones">
-               </ul>
+       <div class="recom">
+               <h4> Peliculas Recomendadas </h4>
+             <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+               <ul class="uk-slideshow-items recomendaciones"> </ul>
                <div class="uk-light">
                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
                </div>
-             </div>
-            </div>
         </section>
       </main>
 

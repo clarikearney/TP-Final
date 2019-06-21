@@ -18,7 +18,7 @@ window.addEventListener("load", function() {
    }
    // CIERRA BLOQUE 1
 
-    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en")
+    fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US")
     .then(function(respuesta) {
         return respuesta.json()
       })
@@ -110,7 +110,7 @@ fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?a
       var id = arrayDePeliculas[i].id
       var title = arrayDePeliculas[i].title
       var imagenpelicula = arrayDePeliculas[i].poster_path
-      li = ''
+      var li = ''
       li += '<li>'
       li += '<a href="detallepeli.html?idDePelicula=' + id +'"'
       // li += '<li>'
@@ -120,6 +120,7 @@ fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?a
       li += '</a>'
       li += '</li>'
       var ul = document.querySelector(".recomendaciones")
+
       ul.innerHTML += li
   }
 })
