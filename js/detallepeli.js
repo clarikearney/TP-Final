@@ -93,4 +93,37 @@ window.addEventListener("load", function() {
       .catch(function(error) {
         console.log("Error: " + error);
       })
-    })
+
+/// recomendadas
+fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US&page=1")
+  .then(function(respuesta) {
+    return respuesta.json()
+  })
+  .then(function(informacion) {
+    console.log(informacion.results);
+
+    var arrayDePeliculas = informacion.results
+    console.log(arrayDePeliculas);
+
+    for (var i = 0; i < 10; i++) {
+      var id = arrayDePeliculas[i].id
+      var title = arrayDePeliculas[i].title
+      var imagenpelicula = arrayDePeliculas[i].poster_path
+      var li = ''
+      li += '<li>'
+      li += '<h3>' + 'Recommended Movies' + '</h3>'
+      li += '<a href="detallepeli.html?idDePelicula=' + id +'"'
+      // li += '<li>'
+      // li += '<a href="">'
+      li += '<h2>' + title + '</h2>'
+      li += '<img src='+ imgPath + imagenpelicula+ '>'
+      li += '</a>'
+      li += '</li>'
+      var ul = document.querySelector(".recomendaciones")
+      ul.innerHTML += li
+  }
+})
+  .catch(function(error) {
+    console.log("Error: " + error);
+  })
+})
