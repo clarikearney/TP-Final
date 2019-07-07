@@ -1,11 +1,48 @@
+/* UX (User eXperience)
+¿Qué siente mientras interactúa?
+Es aquello que una persona percibe al interactuar con un producto o servicio. Logramos una buena UX al enfocarnos en diseñar productos útiles, usables y deseables, lo cual influye en que el usuario se sienta satisfecho, feliz y encantado. */
+
+// Usabilidad o UI
+// Con lo que interactúa
+// La Usabilidad es un atributo de una buena experiencia de usuario y la UI o Interfaz del Usuario es con lo que se interactúa.
+
+// Javascript aporta dinamismo a la UI para hacer más agradable la UX
+// Permite validar datos y verificar los mismos antes de enviarlos al servidor
+
+// un evento es algo que pasa en el navegador o q es ejecutado x usuario
 window.addEventListener("load", function() {
+
+  // ¿Qué son las funciones?
+  // Secuencia lógica de instrucciones que realizan acciones (bloque de código asignado para hacer una tarea)
+  // Para recibir las instrucciones pueden recibir cosas y retornar cosas
+  // 1º invoco a la función, luego () para que sea ejecutada
+
+  // una variable es como si fuera una caja que contiene lo que quisieramos
+  // En la caja que utilicemos solo podemos guardar una sola cosa!!!!
+  // los arrays pueden almacenar más de un valor al mismo tiempo y podemos acceder a ellos de manera independiente
+  // Disponen de un índice (index) que permite especificar la posición de cada elemento que contienen
+  // Permiten organizar series de datos que comparten el mismo nombre pero se diferencian por un índice
+  // Como trabajamos con themoviedb (muuuuchos elementos) vamos a trabajar con arrays
+
 
 // la función que aparece abajo de todo dice que cada vez que el
 // usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información. Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en el campo nombre, porque el usuario ya esta logueado, tiene que escribirse el nombre escrito por el usuario
 
+// CONDICIONALES: Generar condiciones para ejecutar código
+// if(condición lógica)
+// condición lógica: se debe probar (utilizando operadores de comparación retorna valor true o false)
+// if(true);else(false)
+
 // Ese if preguntaria si hay alguien logueado
 
   if (localStorage.getItem("nombre") != null) {
+
+    // El objeto document representa el html que será cargado en el navegador
+    // ¿Cómo CAPTURAMOS los elementos existentes en el HTML? document.querySelector("lo que queremos capturar");
+    // ¿Cuál es el objetivo de capturar algún elemento de HTML? Modificar algo
+    // innerText: agregar cadenas de texto como contenido de una etiqueta HTML
+    // innerHTML: reemplazar el contenido de una etiqueta HTML
+
     var login = document.querySelector(".li-login")
     login.style.display = "none";
      var nombre = localStorage.getItem("nombre");
@@ -29,10 +66,33 @@ window.addEventListener("load", function() {
     var boton3 = document.querySelector("#mail");
     var boton4 = document.querySelector("#gender");
 
+    // CONDICIONALES: Generar condiciones para ejecutar código
+    // if(condición lógica)
+    // condición lógica: se debe probar (utilizando operadores de comparación retorna valor true o false)
+    // if(true);else(false)
+
     if(boton.value == "" || boton2.value == "" || boton3.value == ""){
+      // OBJETOS LITERALES: representación en código de elemento de la vida real
+      // un OBJETO en javascript es un bloque de código que tiene propiedades (las prop tienen un valor determinado)
+      // ¿Cómo accedemos al valor de dicha propiedad? objeto.prop
+
+      // var student = { (student es un objeto)
+      //   name: "Juana", (name es una propiedad del objeto student y Juana es el valor de dicha propiedad)
+      // }
+      // ¿Cómo accedemos al nombre del estudiante?
+      // console.log(student.name);
+
+      // OPERADORES LÓGICOS: comparar datos o expresiones
+      // == indica igualdad
+      // || or (el resultado es verdadero si alguna expresión es verdadera)
+
       event.preventDefault();
+      // un evento es algo que pasa en el navegador o q es ejecutado x usuario, ¿Cómo podemos evitar que se dispare el evento por defecto de un elemento?
+      // debo detener la ejecución del código hasta que el usuario complete un campo
+        // Alert hará aparecer en el navegador un cartel de alerta con el mensaje enviado
       // si un input esta vacio, if (input esta vacio) hace prevent default una vez que haga submit, antes del if
-      // hacer variables de nombre y contra
+      // hacer var de nombre, email, contra, genero para q usuario complete
+
       alert("complete your info!");
     }else if ((!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(boton3.value)))){
       event.preventDefault();
