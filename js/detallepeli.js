@@ -45,8 +45,9 @@ window.addEventListener("load", function() {
     fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "?api_key=95b9e84c8317f917cebb3f232298f131&language=en-US")
     .then(function(respuesta) {
         return respuesta.json()
+      })
         // return CORTA la ejecución y RETORNA (valores de retorno: valores devueltos por la función cuando se completa)
-        // Generalmente, se usa un valor de retorno donde la función es un paso intermedio en un cálculo de algún tipo. Quieres llegar a un resultado final, que involucra algunos valores. Esos valores deben ser calculados por una función, que luego devuelve los resultados para que puedan usarse en la siguiente etapa del cálculo.      })
+        // Generalmente, se usa un valor de retorno donde la función es un paso intermedio en un cálculo de algún tipo. Quieres llegar a un resultado final, que involucra algunos valores. Esos valores deben ser calculados por una función, que luego devuelve los resultados para que puedan usarse en la siguiente etapa del cálculo.
       .then(function(informacion) {
         console.log(informacion);
 
