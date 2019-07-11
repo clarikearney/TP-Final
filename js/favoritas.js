@@ -114,6 +114,7 @@ for (var i = 0; i < favoritas.length; i++) {
       // innerText: agregar cadenas de texto como contenido de una etiqueta HTML
       // innerHTML: reemplazar el contenido de una etiqueta HTML
 
+      // (HTML) Hay una ul vacía (clase: fav) que es a donde se agregaran las li al ejecutarse la función
       var ul = document.querySelector("ul.fav")
       // aca estamos capturando la ul con clase fav de favoritas.html, y es a donde se va a insertar la info nueva
       console.log(ul);
