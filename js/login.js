@@ -1,16 +1,20 @@
-/* UX (User eXperience)
-¿Qué siente mientras interactúa?
-Es aquello que una persona percibe al interactuar con un producto o servicio. Logramos una buena UX al enfocarnos en diseñar productos útiles, usables y deseables, lo cual influye en que el usuario se sienta satisfecho, feliz y encantado. */
-
+// UX (User Experience)
+// ¿Qué siente mientras interactúa?
+// Es aquello que una persona percibe al interactuar con un producto o servicio. Logramos una buena UX al enfocarnos en diseñar productos útiles, usables y deseables, lo cual influye en que el usuario se sienta satisfecho, feliz y encantado. */
+//
 // Usabilidad o UI
 // Con lo que interactúa
 // La Usabilidad es un atributo de una buena experiencia de usuario y la UI o Interfaz del Usuario es con lo que se interactúa.
-
+//
 // Javascript aporta dinamismo a la UI para hacer más agradable la UX
 // Permite validar datos y verificar los mismos antes de enviarlos al servidor
-
-// un evento es algo que pasa en el navegador o q es ejecutado x usuario
 window.addEventListener("load", function() {
+
+  // un evento es algo que pasa en el navegador o q es ejecutado x usuario
+  // Event Listeners
+  // Syntax: element.addEventListener(event,function)
+  // cuando suceda el evento (load) se va a ejecutar la función
+  // addEventListener permite que se ejecute más de un evento a la vez (window.onload sólo permite que se ejecute un evento al cargar la página)
 
   // ¿Qué son las funciones?
   // Secuencia lógica de instrucciones que realizan acciones (bloque de código asignado para hacer una tarea)
@@ -26,7 +30,7 @@ window.addEventListener("load", function() {
 
 
 // la función que aparece abajo de todo dice que cada vez que el
-// usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información. Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en el campo nombre, porque el usuario ya esta logueado, tiene que escribirse el nombre escrito por el usuario
+// usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información (cuando pasas de la home a la página de favoritos, por ejemplo, se borra la información del login). Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en el campo nombre, porque el usuario ya esta logueado, tiene que escribirse el nombre escrito por el usuario (ejecutarse la función)
 
 // CONDICIONALES: Generar condiciones para ejecutar código
 // if(condición lógica)
@@ -34,6 +38,7 @@ window.addEventListener("load", function() {
 // if(true);else(false)
 
 // Ese if preguntaria si hay alguien logueado
+// Si ya hay alguien logueado se ejecuta la función
 
   if (localStorage.getItem("nombre") != null) {
 
@@ -51,16 +56,19 @@ window.addEventListener("load", function() {
   }
 
 
-  // primero chequear si se envia el formulario (agarro el formulario: querySelector): var Form = document.querySelector(#myForm)
-  // lo guardo en una variable (var nombre y var contraseña)
+  var theForm = document.querySelector ("#myForm");
+  // .onsubmit es un evento que se dispara exclusivamente sobre el <form> y cuando se ha presionado un botón submit
   // cuando se envia el formulario (theForm.onsubmit):
   // si los campos estan vacios, prevengo el envio del formulario (event.preventDefault)
-  // el usuario escribe String, si no cargaste nada en nombre y no me cargaste nada en contraseña (==""), preventDefault
-  // local storage es una caja, adentro guardo valores para que los pueda identificar
-  // set item almacena valores que tienen que tener un nombre por eso es setItem ("nombre",nombre)
-
-  var theForm = document.querySelector ("#myForm");
   theForm.onsubmit = function (event) {
+
+    // primero hicimos un formulario en html que aparece en forma de cartel cuando el usuario clickea el botón login
+    // Necesitamos capturar el form (id: myForm)
+    // Este formulario contiene 4 divs para resolver que el usuario ingrese su nombre, email, género y contraseña
+    // Cada div tiene un input (salvo el div de géneros que tiene un select) para resolver sus respectivas funciones o type (text, text, password)
+
+    // hacer var de nombre, email, contra, genero para q usuario complete para capturar los  input
+
     var boton = document.querySelector("#nombre")
     var boton2 = document.querySelector("#contraseña")
     var boton3 = document.querySelector("#mail");
@@ -68,40 +76,40 @@ window.addEventListener("load", function() {
 
     // CONDICIONALES: Generar condiciones para ejecutar código
     // if(condición lógica)
-    // condición lógica: se debe probar (utilizando operadores de comparación retorna valor true o false)
-    // if(true);else(false)
+    // condición lógica: se debe probar que el usuario completó el form
 
     if(boton.value == "" || boton2.value == "" || boton3.value == ""){
-      // OBJETOS LITERALES: representación en código de elemento de la vida real
-      // un OBJETO en javascript es un bloque de código que tiene propiedades (las prop tienen un valor determinado)
-      // ¿Cómo accedemos al valor de dicha propiedad? objeto.prop
 
-      // var student = { (student es un objeto)
-      //   name: "Juana", (name es una propiedad del objeto student y Juana es el valor de dicha propiedad)
-      // }
-      // ¿Cómo accedemos al nombre del estudiante?
-      // console.log(student.name);
-
-      // OPERADORES LÓGICOS: comparar datos o expresiones
-      // == indica igualdad
-      // || or (el resultado es verdadero si alguna expresión es verdadera)
-
-      event.preventDefault();
-      // un evento es algo que pasa en el navegador o q es ejecutado x usuario, ¿Cómo podemos evitar que se dispare el evento por defecto de un elemento?
+      // el usuario escribe String, si no cargaste nada en nombre, email y contraseña (==""), preventDefault
       // debo detener la ejecución del código hasta que el usuario complete un campo
+      // ¿Cómo saber si un campo esta vacío? .value nos retorna el valor actual de un campo de un formulario
         // Alert hará aparecer en el navegador un cartel de alerta con el mensaje enviado
       // si un input esta vacio, if (input esta vacio) hace prevent default una vez que haga submit, antes del if
-      // hacer var de nombre, email, contra, genero para q usuario complete
 
+      event.preventDefault();
       alert("complete your info!");
+      // Además queremos validar el valor del campo del email, verificar su formato de dato (e-email): regex (regular expression boundary)
+      // si al usar el método test que recibe como parámetro el valor que queremos evaluar, y el valor suministrado no cumple con el patrón , hay que hacer prevent default y debe aparecer un cartel alertando el error
     }else if ((!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(boton3.value)))){
       event.preventDefault();
       alert("You have entered an invalid email adress!")
     }else {
+      // en el caso de que todos los campos esten llenos y en el formato correcto (else, si no hay prevent default)
+      // hacer variables con lo que llena el usuario en el form
+      //  .value nos retorna el valor actual de un campo de un formulario
       var name = boton.value;
       var pass = boton2.value;
       var mail = boton3.value;
-      //var gender = boton4.value;
+
+// Web Storage: Almacenar información en el navegador del usuario
+// Hay dos métodos, localStorage o sessionStorage
+// localStorage guarda info sin tiempo de expiración y almacena strings
+// sessionStorage guarda información mientras se mantenga abierto el navegador
+
+      // local storage es una caja, adentro guardo valores para que los pueda identificar
+      // métodos de localStorage
+      // setItem(): almacena valores en el objeto localStorage que tienen que tener un nombre por eso es setItem ("nombre",nombre)
+
       localStorage.setItem("nombre",name);
       localStorage.setItem("pass",pass);
       localStorage.setItem("mail",mail);

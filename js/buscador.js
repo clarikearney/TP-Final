@@ -44,9 +44,9 @@ window.addEventListener("load", function() {
 // Los formularios configurados por GET envían sus datos en el queryString
 // Luego del ? aparece lo que el usuario buscó
 
-  var imgPath = "https://image.tmdb.org/t/p/original"
-  var queryString = new URLSearchParams(window.location.search)
-  var buscador = queryString.get("query")
+var imgPath = "https://image.tmdb.org/t/p/original"
+var queryString = new URLSearchParams(window.location.search)
+var buscador = queryString.get("query")
 
   // API: sistema para intercambiar información entre distintas aplicaciones (posiblemente en distintos servidores, en este caso entre The Movie DB y este proyecto, queremos consumir una API para obtener información de un sistema externo, obtener información actualizada sobre películas)
 
@@ -75,12 +75,11 @@ window.addEventListener("load", function() {
       // return CORTA la ejecución y RETORNA (valores de retorno: valores devueltos por la función cuando se completa)
       // Generalmente, se usa un valor de retorno donde la función es un paso intermedio en un cálculo de algún tipo. Quieres llegar a un resultado final, que involucra algunos valores. Esos valores deben ser calculados por una función, que luego devuelve los resultados para que puedan usarse en la siguiente etapa del cálculo.
       .then(function(informacion) {
-        // .then() recibe un callback, el cual hará lo que le pidamos con la respuesta obtenida, que está en formato JSON
         console.log(informacion.results);
-
+      // .then() recibe un callback, el cual hará lo que le pidamos con la respuesta obtenida, que está en formato JSON
         var arrayDePeliculas = informacion.results
-        // var arrayDePeliculas almacena TODA la información obtenida
         console.log(arrayDePeliculas);
+        // var arrayDePeliculas almacena TODA la información obtenida
 
         // El for nos permite crear ciclos, donde un bloque de código se repite una y otra vez (recorrer el array)
 
@@ -106,7 +105,7 @@ window.addEventListener("load", function() {
 
         // Para obtener la información que me interese obtener busco en el objeto arrayDePeliculas las propiedades que me interesan (el nombre de cada propiedad es distinto para cada api)
 
-        //
+        
           var id = arrayDePeliculas[i].id
           var title = arrayDePeliculas[i].title
           var imagenpelicula = arrayDePeliculas[i].poster_path
