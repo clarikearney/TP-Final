@@ -16,28 +16,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
 
+    <!-- vincular HTML a CSS -->
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/uikit-rtl.css">
     <link rel="stylesheet" href="css/uikit-rtl.min.css">
     <link rel="stylesheet" href="css/uikit.css">
     <link rel="stylesheet" href="css/uikit.min.css">
-
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/navbar.css">
-
     <meta name="viewport" content="width=device-width, user-scalable=no">
-
-
   </head>
+
   <body>
     <div class="access-allowed">
       <div class="access-allowed">
           <header>
               <nav>
                   <ul class="ul-menu">
-                    <!-- hicimos una lista con elementos de lista para hacer un navbar e ir diriguiendo a todas las páginas
-                  Necesitabamos incluir una imágen, tres hipervínculos de los cuales uno tiene un dropdown desplegable, un buscador y dos botones para registrarse y logearse -->
+                    <!-- hicimos una lista con elementos de lista para hacer una barra de navegacion que nos permita acceder a todas las páginas mediante hipervínculos (a), href. Esto me indica a dónde quiero que el usuario llegue una vez que haga click en el elemento li.
+                    Géneros es una lista desplegable obtenida de la librería uikit. role="button" indica cuál es el rol de esa lista
+                    El logo de la pagina lo hicimos pensando en la geometria y simplicidad que queriamos brindarle al sitio.
+                    Luego aplicamos tres hipervínculos de los cuales uno tiene un dropdown desplegable, un buscador y un boton para logearse -->
                       <li id="li-logo">
                         <img src="img/abstractlogo.png" alt="">
                       </li>
@@ -49,9 +49,6 @@
                           Genres
                         </a>
                         <div class="dropdown-menu lista-generos" id="desplegable" aria-labelledby="navbarDropdown">
-
-
-
                         </div>
                       </li>
                       <li class="li-menu"><a class="color-black" href="#products"></a>
@@ -59,10 +56,13 @@
                       </li>
                       <li>
                         <div class="uk-margin">
+                          <!-- Para hacer el buscador necesitabamos un form.
+                          Elegimos uno de uikit por una cuestión de estilo.
+                          Con action=buscador.html indicamos a qué pagina se deben enviar los datos del formulario cuando se envía el formulario a ese url (ruta relativa:buscador.html).
+                          Con method="get" agregamos datos del formulario a la URL así aparece en la url lo que el usuario buscó luego del signo de interrogación.
+                          Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda.
+                         Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
                             <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
-                                <!--get envia busqueda en el html y guarda data en la url -->
-                                <!-- <form action="URL"> -->
-                                <!-- Action: Dónde enviar los datos del formulario cuando se envía el formulario -->
                                 <a class="uk-search-icon-flip link_envio" uk-search-icon></a>
                                 <input class="uk-search-input" type="search" name="query" placeholder="Search...">
                             </form>
@@ -71,7 +71,11 @@
                       <!-- Obtener un modal de uikit para que aparezca un cartel cuando el usuario haga click en un botóna
                       El botón de login tiene que ir adentro del li y tiene que ir en el nav, el div obtenido del
                       uikit con el form, los iconos y demas tiene que ir afuera del li  -->
-                      <span id="nombre-de-usuario"></span>
+                      <span id="nombre-de-usuario">
+                        <!-- Este span vacío tiene la función de agregar aquí el nombre del usuario una vez que este se haya logueado -->
+                      </span>
+                      <!-- Obtuvimos un modal de uikit para que aparezca un cartel cuando el usuario haga click en el botón login.
+                      El botón de login tiene que ir adentro del li-login y en el nav, por fuera del div que contiene el form.-->
                       <li class="li-login"><a class="color-black" href="#products"></a>
                         <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
                         <div id="modal-overflow" uk-modal>
@@ -122,23 +126,26 @@
           </header>
 
         <main>
+            <!-- Para visualizar las tres secciones de películas (puntaje, populares, próximos estrenos) elegimos hacerlo mediante un carrusel de uikit (slidehow Content overlays), las clases forman parte del mismo.-->
           <section id="buscador" class="section-buscador">
+            <!-- Una clase agregada (obtenida de uikit) "animation: push;ratio: 2:3" porque esa es la forma de controlar las proporciones al decidir trabajar con uikit.
+            Esta decisión se mantuvo en home, buscador, géneros, etc. por una cuestión de coherencia en el estilo -->
             <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
-              <!-- Al usar la libreria de UIkit la forma de controlar el tamaño de la imagen es mediante proporciones,
-            por eso el código ratio: 10:5 fue el que sirvió para ajustar el tamaño -->
                 <ul class="uk-slideshow-items detalle" >
+                <!-- Al ejecutarse la función se agregaran li a través de js en la ul vacía -->
                 </ul>
                 <div class="uk-light">
+                  <!-- Hipervínculo para pasar a la siguiente película -->
                     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <!-- Hipervínculo para regresar a la película anterior -->
                     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
                 </div>
             </div>
           </section>
-
         </main>
 
-
         <footer>
+          <!-- Nombres alumnos, nombre página y logo The Movie DB -->
             <div class="copyright">
               <h2 class="mcm">MC Movies</h2>
               <img class="img-poweredby"src="img/poweredby.png" alt="">
@@ -147,6 +154,7 @@
         </footer>
   </body>
 </html>
+<!-- vincular HTML a javascript -->
 <script type="text/javascript" src="js/ukit-icons.js"></script>
 <script type="text/javascript" src="js/ukit-icons.min.js"></script>
 <script type="text/javascript" src="js/ukit.js"></script>

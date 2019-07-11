@@ -22,8 +22,8 @@
       <link rel="stylesheet" href="css/uikit.css">
       <link rel="stylesheet" href="css/uikit.min.css">
       <meta name="viewport" content="width=device-width, user-scalable=no">
-
   </head>
+
   <body>
       <div class="access-allowed">
           <header>
@@ -50,21 +50,21 @@
                         <a  href="favoritas.html">Favorites</a>
                       </li>
                       <li>
-                        <!-- Para hacer el buscador necesitabamos un form.
-                        Elegimos uno de uikit por una cuestión de estilo.
-                        Con action=buscador.html indicamos a qué pagina se deben enviar los datos del formulario cuando se envía el formulario a ese url (ruta relativa:buscador.html).
-                        Con method="get" agregamos datos del formulario a la URL así aparece en la url lo que el usuario buscó luego del signo de interrogación.
-                        Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda.
-                       Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
                         <div class="uk-margin">
+                          <!-- Para hacer el buscador necesitabamos un form.
+                          Elegimos uno de uikit por una cuestión de estilo.
+                          Con action=buscador.html indicamos a qué pagina se deben enviar los datos del formulario cuando se envía el formulario a ese url (ruta relativa:buscador.html).
+                          Con method="get" agregamos datos del formulario a la URL así aparece en la url lo que el usuario buscó luego del signo de interrogación.
+                          Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda.
+                         Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
                             <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
-                                <!--get envia busqueda en el html y guarda data en la url --><a class="uk-search-icon-flip link_envio" uk-search-icon></a>
+                                <a class="uk-search-icon-flip link_envio" uk-search-icon></a>
                                 <input class="uk-search-input" type="search" name="query" placeholder="Search...">
                             </form>
                         </div>
                       </li>
                       <span id="nombre-de-usuario">
-                <!-- Este span vacío tiene la función de agregar aquí el nombre del usuario una vez que este se haya logueado -->
+                        <!-- Este span vacío tiene la función de agregar aquí el nombre del usuario una vez que este se haya logueado -->
                       </span>
                       <!-- Obtuvimos un modal de uikit para que aparezca un cartel cuando el usuario haga click en el botón login.
                       El botón de login tiene que ir adentro del li-login y en el nav, por fuera del div que contiene el form.-->
@@ -116,12 +116,12 @@
                   </ul>
               </nav>
           </header>
-          <!-- Para visualizar las tres secciones de películas (puntaje, populares, próximos estrenos) elegimos hacerlo mediante un carrusel de uikit (slidehow Content overlays), las clases forman parte del mismo.
-          Una clase agregada, también obtenida de uikit, fue "animation: push;ratio: 2:3" porque esa es la forma de controlar las proporciones al decidir trabajar con uikit.
-          Esta decisión se mantuvo en home, buscador, géneros, etc. por una cuestión de coherencia en el estilo-->
           <main>
+            <!-- Para visualizar las tres secciones de películas (puntaje, populares, próximos estrenos) elegimos hacerlo mediante un carrusel de uikit (slidehow Content overlays), las clases forman parte del mismo.-->
             <section id="puntaje" class="section-puntaje">
               <h5 class="mejor-puntaje">Top Rated!</h5>
+              <!-- Una clase agregada (obtenida de uikit) "animation: push;ratio: 2:3" porque esa es la forma de controlar las proporciones al decidir trabajar con uikit.
+              Esta decisión se mantuvo en home, buscador, géneros, etc. por una cuestión de coherencia en el estilo -->
               <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
                 <ul class="uk-slideshow-items ul-puntaje">
                 <!-- Al ejecutarse la función se agregaran li a través de js en la ul vacía -->
