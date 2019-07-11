@@ -115,6 +115,7 @@ for (var i = 0; i < favoritas.length; i++) {
       // innerHTML: reemplazar el contenido de una etiqueta HTML
 
       var ul = document.querySelector("ul.fav")
+      // aca estamos capturando la ul con clase fav de favoritas.html, y es a donde se va a insertar la info nueva
       console.log(ul);
       ul.innerHTML += li
     })

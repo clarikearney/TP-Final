@@ -32,6 +32,11 @@ window.addEventListener("load", function() {
 
    // Paso 1 - Leo de localStorage
    var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
+   // CONDICIONALES: Generar condiciones para ejecutar código
+   // if(condición lógica)
+   // condición lógica: se debe probar (utilizando operadores de comparación retorna valor true o false)
+   // if(true);else(false)
+
 // si json me dice que no tiene favoritas (== indica igualdad)
    if (jsonFavoritas == null) {
      var favoritas = [] // creo un array de favoritas
