@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 
 *{box-sizing: border-box;}
+/* box-sizing: propiedad CSS para cambiar el modelo de caja por defecto de los navegadores. */
+/* border-box: hacemos que el ancho especificado sea equivalente al ancho total */
 
 span{
   color: #FFF;

@@ -1,4 +1,6 @@
 *{box-sizing: border-box;}
+/* box-sizing: propiedad CSS para cambiar el modelo de caja por defecto de los navegadores. */
+/* border-box: hacemos que el ancho especificado sea equivalente al ancho total */
 
 #puntaje {
 padding-top: 0;
@@ -31,6 +33,12 @@ h5.mejor-puntaje {
   padding-left: 20px;
 }
 @media screen and (max-width: 420px) {
+  /* Diseño Responsive */
+  /* Media Query: conjunto de reglas que permiten re-organizar el contenido dependiendo de las condiciones de visualización del documento (se deben escribir al final del css)*/
+
+  /* Al especificar max-width, estamos diciendo "si como máximo hay Npx de ancho, apliquemos esto" */
+
+  /* Trabajamos con mobile last (primero estilos para desktop, luego adaptamos al viewport de mobile) */
 
   main section h5 {
     margin-left: 0%;
