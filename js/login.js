@@ -28,10 +28,6 @@ window.addEventListener("load", function() {
   // Permiten organizar series de datos que comparten el mismo nombre pero se diferencian por un índice
   // Como trabajamos con themoviedb (muuuuchos elementos) vamos a trabajar con arrays
 
-
-// la función que aparece abajo de todo dice que cada vez que el
-// usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información (cuando pasas de la home a la página de favoritos, por ejemplo, se borra la información del login). Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en el campo nombre, porque el usuario ya esta logueado, tiene que escribirse el nombre escrito por el usuario (ejecutarse la función)
-
 // CONDICIONALES: Generar condiciones para ejecutar código
 // if(condición lógica)
 // condición lógica: se debe probar (utilizando operadores de comparación retorna valor true o false)
@@ -40,6 +36,17 @@ window.addEventListener("load", function() {
 // Ese if preguntaria si hay alguien logueado
 // Si ya hay alguien logueado se ejecuta la función
 
+// Web Storage: Almacenar información en el navegador del usuario (almacena en el cliente)
+// Hay dos métodos, localStorage o sessionStorage
+// localStorage guarda info sin tiempo de expiración y almacena strings
+// sessionStorage guarda información mientras se mantenga abierto el navegador
+
+      // local storage es una caja, adentro guardo valores para que los pueda identificar
+      // métodos de localStorage
+      // getItem(): obtiene valores del objeto localStorage que tienen que tener un nombre o key asociada ("nombre",nombre)
+
+      // la función que aparece abajo de todo dice que cada vez que el
+      // usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información cargada por el usuario(cuando pasas de la home a la página de favoritos, por ejemplo, se borra la información del login). Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en los campos del formulario, tienen que llenarse los mismos con la información almacenada en localStorage (ejecutarse la función)
   if (localStorage.getItem("nombre") != null) {
 
     // El objeto document representa el html que será cargado en el navegador
@@ -48,24 +55,27 @@ window.addEventListener("load", function() {
     // innerText: agregar cadenas de texto como contenido de una etiqueta HTML
     // innerHTML: reemplazar el contenido de una etiqueta HTML
 
+
+    // agarrar el boton de login y ocultarlo
     var login = document.querySelector(".li-login")
     login.style.display = "none";
+    // agarrar el nombre que cargaron y reemplazarlo por el boton de login
      var nombre = localStorage.getItem("nombre");
+       // agregarlo sobre un span vacio en el html, hacer un innerText porque un string es un texto
      var span = document.querySelector("#nombre-de-usuario")
-     span.innerText = localStorage.getItem("nombre");
+     span.innerText = name;
   }
 
+  // primero hicimos un formulario en html que aparece en forma de cartel cuando el usuario clickea el botón login
+  // Necesitamos capturar el form (id: myForm)
+  // Este formulario contiene 4 divs para resolver que el usuario ingrese su nombre, email, género y contraseña
+  // Cada div tiene un input (salvo el div de géneros que tiene un select) para resolver sus respectivas funciones o type (text, text, password)
 
   var theForm = document.querySelector ("#myForm");
   // .onsubmit es un evento que se dispara exclusivamente sobre el <form> y cuando se ha presionado un botón submit
   // cuando se envia el formulario (theForm.onsubmit):
   // si los campos estan vacios, prevengo el envio del formulario (event.preventDefault)
   theForm.onsubmit = function (event) {
-
-    // primero hicimos un formulario en html que aparece en forma de cartel cuando el usuario clickea el botón login
-    // Necesitamos capturar el form (id: myForm)
-    // Este formulario contiene 4 divs para resolver que el usuario ingrese su nombre, email, género y contraseña
-    // Cada div tiene un input (salvo el div de géneros que tiene un select) para resolver sus respectivas funciones o type (text, text, password)
 
     // hacer var de nombre, email, contra, genero para q usuario complete para capturar los  input
 
@@ -94,14 +104,14 @@ window.addEventListener("load", function() {
       event.preventDefault();
       alert("You have entered an invalid email adress!")
     }else {
-      // en el caso de que todos los campos esten llenos y en el formato correcto (else, si no hay prevent default)
+      // si hay datos y en el formato correcto, else
       // hacer variables con lo que llena el usuario en el form
       //  .value nos retorna el valor actual de un campo de un formulario
       var name = boton.value;
       var pass = boton2.value;
       var mail = boton3.value;
 
-// Web Storage: Almacenar información en el navegador del usuario
+// Web Storage: Almacenar información en el navegador del usuario (almacena en el cliente)
 // Hay dos métodos, localStorage o sessionStorage
 // localStorage guarda info sin tiempo de expiración y almacena strings
 // sessionStorage guarda información mientras se mantenga abierto el navegador
@@ -109,22 +119,29 @@ window.addEventListener("load", function() {
       // local storage es una caja, adentro guardo valores para que los pueda identificar
       // métodos de localStorage
       // setItem(): almacena valores en el objeto localStorage que tienen que tener un nombre por eso es setItem ("nombre",nombre)
+      // localStorage.setItem("userName", "Juana"); setea atributo userName
 
+      // Setear atributo "nombre"
       localStorage.setItem("nombre",name);
+      // Setear atributo "pass"
       localStorage.setItem("pass",pass);
+      // Setear atributo "mail"
       localStorage.setItem("mail",mail);
-      //localStorage.setItem("nombre",gender);
       console.log(name);
       console.log(localStorage);
+
+      // Una vez que funciona el login
+      // 1capturar el modal para ocultarlo
       var modal = document.querySelector("#modal-overflow")
       modal.style.display = "none";
+      // 2 agarrar el boton de login y ocultarlo
       var login = document.querySelector(".li-login")
       login.style.display = "none";
+      // 3 agarrar el nombre que cargaron y reemplazarlo por el boton de login
        var nombre = localStorage.getItem("nombre");
+         // agregarlo sobre un span vacio en el html, hacer un innerText porque un string es un texto
        var span = document.querySelector("#nombre-de-usuario")
        span.innerText = name;
-       //var gender = localStorage.getItem("nombre")
-       //var gen = document.querySelector(".gender")
     }
     }
 
