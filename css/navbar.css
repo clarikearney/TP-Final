@@ -26,6 +26,7 @@ header nav {
   height: 80px;
   box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
 }
+/* Queremos lograr que el contenido del sitio sea responsive usando flexbox */
 nav ul {
   display: flex;
   position: fixed;
@@ -115,6 +116,13 @@ footer h6 {
 #contenedor:hover > #desplegable {
   display: block;
 }
+
+/* Diseño Responsive */
+/* Media Query: conjunto de reglas que permiten re-organizar el contenido dependiendo de las condiciones de visualización del documento (se deben escribir al final del css)*/
+
+/* Al especificar max-width, estamos diciendo "si como máximo hay Npx de ancho, apliquemos esto" */
+
+/* Trabajamos con mobile last (primero estilos para desktop, luego adaptamos al viewport de mobile) */
 
 @media screen and (max-width: 420px) {
   header nav {
