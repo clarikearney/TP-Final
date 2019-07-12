@@ -105,7 +105,7 @@ var buscador = queryString.get("query")
 
         // Para obtener la información que me interese obtener busco en el objeto arrayDePeliculas las propiedades que me interesan (el nombre de cada propiedad es distinto para cada api)
 
-        
+
           var id = arrayDePeliculas[i].id
           var title = arrayDePeliculas[i].title
           var imagenpelicula = arrayDePeliculas[i].poster_path
