@@ -30,8 +30,11 @@ window.addEventListener("load", function() {
 
  // INICIO BLOQUE 1 - Leer el array de storage
 
-   // Paso 1 - Leo de localStorage
+   // Paso 1 - Leo de localStorage (es una herramienta que nis permite almacenar info en el navegador del Usuario,
+   // el localStorage guarda info sin tiempoo de expiración)
    var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
+   // getItem --> obtiene valores mediante su key asociada en el localStorage
+   // peliculasFavoritas se encuentra almacenada en
    // CONDICIONALES: Generar condiciones para ejecutar código
    // if(condición lógica)
    // condición lógica: se debe probar (utilizando operadores de comparación retorna valor true o false)
@@ -41,7 +44,7 @@ window.addEventListener("load", function() {
    if (jsonFavoritas == null) {
      var favoritas = [] // creo un array de favoritas
    } else {
-     // Paso 2 - Desempaqueto el json
+     // Paso 2 - Desempaqueto el json (de JSON paso a objetio literal)
      var favoritas = JSON.parse(jsonFavoritas)
 
    }
@@ -84,11 +87,12 @@ window.addEventListener("load", function() {
         li += '<h4>' + "Fecha de estreno: " + fechaEstreno + '</h4>'
         li += '<h4>' + "Lenguaje: " + lenguajepeli + '</h4>'
         li += '<h3>'
-        // como los generos estan en un array
+        // como los generos estan en un array, tengo que recorrerlo con un for
         // ¿Cómo obtengo la cantidad de elementos de un array? .length
         // Si  queremos obtener toodas la informacion de lo que el usuario seleccione (ya sea una palabra en el buscador, un género, la información del detalle de una película, las películas de mayor puntaje, etc.) tenemos que hacer .length
         for (var i=0; i < arrayDeGeneros.length; i++){
               li += '<a href="generos.html?id=' + arrayDeGeneros[i].id + '">'
+              // el anchor nos lleva a todos los generos en los que esta la pelicula
               li += arrayDeGeneros[i].name
               // CONDICIONALES: Generar condiciones para ejecutar código
               // if(condición lógica)
@@ -107,7 +111,7 @@ window.addEventListener("load", function() {
         // ¿Cuál es el objetivo de capturar algún elemento de HTML? Modificar algo
         // innerText: agregar cadenas de texto como contenido de una etiqueta HTML
         // innerHTML: reemplazar el contenido de una etiqueta HTML
-
+        // (".detalle-peli") está en html detallepeli, y hay un div vacío para que la info. que llega de la API se ejecute en ese lugar
         var ul = document.querySelector(".detalle-peli")
         ul.innerHTML += li
 
@@ -141,14 +145,17 @@ window.addEventListener("load", function() {
            // hacemos favoritas.indexOf para que si encuentra (es >= 0 o distinto de -1) ese elemnto en el array de las películas favoritas
 
           // la quito // cuando hago click en la estrella, que pase a blanco
-
+          // deja de estar en favoritas
           var pos = favoritas.indexOf(idDePelicula)
           favoritas.splice(pos,1)
           document.querySelector(".estrellita").style.backgroundColor = "white"
         } else { // caso contrario, que siga estando pintada
            favoritas.push(idDePelicula)
+
            // ¿Cómo agregar un elemento al final de un array?
-           // El método push () añade uno o más elementos al final de un array y devuelve la nueva longitud del array
+
+         // El método push () añade uno o más elementos al final de un array y devuelve la nueva longitud del array
+         // en este caso, añade la pelicula a favoritas
         document.querySelector(".estrellita").style.backgroundColor = "gold"
 
          }
@@ -195,7 +202,7 @@ fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?a
       li += '</a>'
       li += '</li>'
       var ul = document.querySelector(".recomendaciones")
-
+      // la clase .recomendaciones esta en detallepeli.html, y cuando la funcion se ejecuta agrega un carrousel con 9 pelis recomendadas
       ul.innerHTML += li
   }
 })

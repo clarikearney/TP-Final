@@ -83,7 +83,8 @@ window.onload = function() {
           // innerHTML: reemplazar el contenido de una etiqueta HTML
 
           document.querySelector("#desplegable").innerHTML += '<p> <a class="dropdown-menu" href=generos.html?id=' + id + '>' + title + '</a></p>'
-
+          // En home.html en la navbar hay una seccion que corresponde a la lista de generos
+          // Además, hay un div vacío (id: desplegable), que es a donde se agregara la lista de generos que viene de la API (cuando se ejecute la función)
         }
 
       })
