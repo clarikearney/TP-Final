@@ -106,7 +106,7 @@
                                    <div class="uk-modal-footer uk-text-right">
                                      <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->
                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                       <!-- Formularios: onsubmit: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
+                                       <!-- Formularios: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
                                        <button class="uk-button uk-button-primary" type="submit">Save</button>
                                    </div>
                                 </form>
@@ -125,8 +125,10 @@
              </span>
           </div>
           <div class="trailer">
+           <!-- para insertar el trailer utilizamos un div aparte -->
           <iframe  class="trailer-peli" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <span>
+            <!-- el btn onclick nos permite seleccionar la pelicula como favorita -->
                <button onclick='agregarFavoritos(" + id + ")' class='estrellita '>&#9733; FAVORITA &#9733; </button>
           </span>
           </div>
