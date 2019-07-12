@@ -61,9 +61,11 @@ window.addEventListener("load", function() {
     login.style.display = "none";
     // agarrar el nombre que cargaron y reemplazarlo por el boton de login
      var nombre = localStorage.getItem("nombre");
-       // agregarlo sobre un span vacio en el html, hacer un innerText porque un string es un texto
+    // agregarlo sobre un span vacio en el html, hacer un innerText porque un string es un texto,
+    // y justamente la función del innerText es inyectar o agregar cadenas de texto como contenido
      var span = document.querySelector("#nombre-de-usuario")
      span.innerText = name;
+
   }
 
   // primero hicimos un formulario en html que aparece en forma de cartel cuando el usuario clickea el botón login
@@ -72,7 +74,7 @@ window.addEventListener("load", function() {
   // Cada div tiene un input (salvo el div de géneros que tiene un select) para resolver sus respectivas funciones o type (text, text, password)
 
   var theForm = document.querySelector ("#myForm");
-  // .onsubmit es un evento que se dispara exclusivamente sobre el <form> y cuando se ha presionado un botón submit
+  // .onsubmit es un evento que se dispara exclusivamente sobre el <form> y cuando se ha presionado un botón submit (en este caso, SAVE)
   // cuando se envia el formulario (theForm.onsubmit):
   // si los campos estan vacios, prevengo el envio del formulario (event.preventDefault)
   theForm.onsubmit = function (event) {
@@ -131,7 +133,7 @@ window.addEventListener("load", function() {
       console.log(localStorage);
 
       // Una vez que funciona el login
-      // 1capturar el modal para ocultarlo
+      // 1 capturar el modal para ocultarlo
       var modal = document.querySelector("#modal-overflow")
       modal.style.display = "none";
       // 2 agarrar el boton de login y ocultarlo
