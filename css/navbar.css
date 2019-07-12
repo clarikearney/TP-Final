@@ -29,6 +29,7 @@ header nav {
   box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
 }
 /* Queremos lograr que el contenido del sitio sea responsive usando flexbox */
+/* En el contenedor de los elementos de lista (ul) pusimos display:flex para que los elementos se acomoden horizontalmente. Al asignarle un ancho del 100%  a los elementos contenidos en el ul, con el space around el resto del porcentaje fue el margen esperado */
 nav ul {
   display: flex;
   position: fixed;
@@ -44,7 +45,6 @@ nav ul li {
   flex-direction: row;
   list-style-type: none;
   font-size: 1.5rem;
-  /* justify-content: space-around; */
 }
 nav ul li a {
   text-decoration: none;
@@ -80,7 +80,6 @@ section {
 footer {
     width: 100%;
     height: 20%;
-    /* position: fixed; */
     bottom: 0;
     left: 0;
     background: #3898F9;
@@ -160,7 +159,6 @@ div.uk-margin {
 }
   footer {
       width: 100%;
-      /* position: fixed; */
       bottom: 0;
       left: 0;
       background: #3898F9;
